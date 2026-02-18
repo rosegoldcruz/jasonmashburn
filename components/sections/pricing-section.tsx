@@ -23,23 +23,23 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="bg-secondary px-6 py-24">
-      <div className="max-w-5xl mx-auto">
+    <section className="bg-secondary/55 px-5 md:px-8 py-20 md:py-22 border-y border-border/70">
+      <div className="max-w-6xl mx-auto">
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Simple, transparent pricing</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Start free, upgrade when you&apos;re ready.</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-foreground leading-[0.94]">Simple, transparent pricing</h2>
+          <p className="text-muted-foreground mt-3 max-w-md mx-auto">Start free, upgrade when you&apos;re ready.</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
               key={i}
-              className={`relative bg-background rounded-xl p-8 ticket-edge ${plan.popular ? "ring-2 ring-primary" : ""}`}
+              className={`relative bg-background rounded-2xl p-7 md:p-8 ticket-edge border border-border/80 shadow-[0_18px_38px_-24px_rgba(0,0,0,0.45)] ${plan.popular ? "ring-2 ring-primary" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -47,7 +47,7 @@ export function PricingSection() {
               data-clickable
             >
               {plan.popular && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-foreground text-xs font-medium px-3 py-1 rounded-full">
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-background text-xs font-medium px-3 py-1 rounded-full">
                   Popular
                 </span>
               )}
@@ -55,7 +55,7 @@ export function PricingSection() {
               <div className="text-center pb-6 border-b border-dashed border-border">
                 <h3 className="font-serif text-xl text-foreground">{plan.name}</h3>
                 <div className="mt-4 flex items-baseline justify-center gap-1">
-                  <span className="text-4xl md:text-5xl font-serif text-foreground">{plan.price}</span>
+                  <span className="text-5xl md:text-6xl font-serif text-foreground">{plan.price}</span>
                   <span className="text-muted-foreground">{plan.period}</span>
                 </div>
                 <p className="text-muted-foreground text-sm mt-2">{plan.description}</p>
@@ -74,7 +74,7 @@ export function PricingSection() {
                 className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
-                    : "bg-secondary text-foreground hover:bg-accent/30"
+                    : "bg-secondary text-foreground hover:bg-primary/10"
                 }`}
               >
                 Get started

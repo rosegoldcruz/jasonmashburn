@@ -38,10 +38,10 @@ export function InsightsSection() {
   }
 
   return (
-    <section className="bg-background px-6 py-24" onMouseMove={handleMouseMove}>
-      <div className="max-w-4xl mx-auto">
+    <section className="bg-background px-5 md:px-8 py-20 md:py-22" onMouseMove={handleMouseMove}>
+      <div className="max-w-5xl mx-auto">
         <motion.p
-          className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
+          className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.2em] mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -49,12 +49,12 @@ export function InsightsSection() {
           Insights
         </motion.p>
 
-        <div className="divide-y divide-border">
+        <div className="divide-y divide-border/80 border-y border-border/80">
           {articles.map((article, i) => (
             <motion.a
               key={i}
               href="#"
-              className="group flex items-center justify-between py-6 relative"
+              className="group flex items-center justify-between py-5 md:py-6 relative"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -66,7 +66,7 @@ export function InsightsSection() {
             >
               <div className="flex-1">
                 <span className="text-xs text-muted-foreground uppercase tracking-wider">{article.category}</span>
-                <h3 className="font-serif text-xl md:text-2xl text-foreground mt-1 group-hover:text-primary transition-colors">
+                <h3 className="font-serif text-2xl md:text-3xl leading-[1.05] text-foreground mt-1 group-hover:text-primary transition-colors">
                   {article.title}
                 </h3>
               </div>
@@ -79,7 +79,7 @@ export function InsightsSection() {
         <AnimatePresence>
           {hoveredIndex !== null && (
             <motion.div
-              className="fixed pointer-events-none z-50 w-[200px] md:w-[300px] rounded-lg overflow-hidden shadow-2xl hidden md:block"
+              className="fixed pointer-events-none z-50 w-[220px] md:w-[300px] rounded-xl overflow-hidden shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)] border border-border/80 hidden md:block"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{
                 opacity: 1,

@@ -26,12 +26,17 @@ export function HeroSection() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-6 py-24"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background px-5 md:px-8 lg:px-10 py-16 md:py-20"
     >
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-x-0 top-0 h-[28vh] bg-gradient-to-b from-accent/10 to-transparent" />
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-10 w-[92vw] max-w-6xl h-[36vh] rounded-[2.25rem] border border-border/70 bg-secondary/35" />
+      </div>
+
       {/* Stacked images */}
-      <div className="relative flex items-center justify-center">
+      <div className="relative flex items-center justify-center w-full max-w-6xl">
         <motion.div
-          className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="absolute w-[250px] md:w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_48px_-28px_rgba(0,0,0,0.5)] border border-border/70"
           style={{ rotate: rotate1, x: x1, y, zIndex: 1 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -45,7 +50,7 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="relative w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="relative w-[290px] md:w-[360px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_30px_64px_-26px_rgba(0,0,0,0.55)] border border-border"
           style={{ rotate: rotate2, y, zIndex: 2 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -59,7 +64,7 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="absolute w-[280px] md:w-[320px] aspect-[3/4] rounded-xl overflow-hidden shadow-2xl"
+          className="absolute w-[250px] md:w-[300px] aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_24px_48px_-28px_rgba(0,0,0,0.5)] border border-border/70"
           style={{ rotate: rotate3, x: x3, y, zIndex: 1 }}
           initial={{ clipPath: "inset(100% 0 0 0)" }}
           animate={{ clipPath: "inset(0 0 0 0)" }}
@@ -79,7 +84,7 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
+        <h1 className="text-[3.05rem] md:text-[5.65rem] lg:text-[7.4rem] leading-[0.88] font-serif text-center text-foreground px-6">
           Your work, <em className="italic">curated</em>.
         </h1>
       </motion.div>

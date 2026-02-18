@@ -4,32 +4,32 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Opus Lilac & Ink Theme */
-  --background: 252 250 253;
-  --foreground: 15 5 24;
-  --surface: 244 241 249;
-  --ink: 15 5 24;
-  --iris: 91 33 182;
-  --lilac: 216 180 254;
-  --lime: 217 249 157;
-  --muted-foreground: 110 102 118;
+  /* Scottsdale Private Office Theme */
+  --background: 248 244 236;
+  --foreground: 37 40 44;
+  --surface: 241 236 226;
+  --ink: 37 40 44;
+  --iris: 73 97 128;
+  --lilac: 186 158 101;
+  --lime: 176 188 166;
+  --muted-foreground: 103 105 108;
 
-  --card: 244 241 249;
-  --card-foreground: 15 5 24;
-  --popover: 252 250 253;
-  --popover-foreground: 15 5 24;
-  --primary: 91 33 182;
-  --primary-foreground: 252 250 253;
-  --secondary: 244 241 249;
-  --secondary-foreground: 15 5 24;
-  --muted: 244 241 249;
-  --accent: 216 180 254;
-  --accent-foreground: 15 5 24;
+  --card: 252 249 243;
+  --card-foreground: 37 40 44;
+  --popover: 252 249 243;
+  --popover-foreground: 37 40 44;
+  --primary: 73 97 128;
+  --primary-foreground: 248 244 236;
+  --secondary: 239 233 223;
+  --secondary-foreground: 37 40 44;
+  --muted: 235 229 218;
+  --accent: 186 158 101;
+  --accent-foreground: 37 40 44;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: 233 228 240;
-  --input: 233 228 240;
-  --ring: 91 33 182;
+  --border: 213 206 193;
+  --input: 213 206 193;
+  --ring: 73 97 128;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -156,8 +156,20 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    text-rendering: geometricPrecision;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    line-height: 1.5;
+    background-image:
+      radial-gradient(circle at 15% 12%, rgb(var(--accent) / 0.1), transparent 34%),
+      radial-gradient(circle at 85% 4%, rgb(var(--primary) / 0.1), transparent 36%);
+  }
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.02em;
   }
 }
 

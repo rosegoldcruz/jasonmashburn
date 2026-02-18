@@ -23,10 +23,10 @@ export function ShowcaseSection() {
   const yValues = [y1, y2, y3]
 
   return (
-    <section ref={containerRef} className="bg-background px-6 py-32 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section ref={containerRef} className="bg-background px-5 md:px-8 py-22 md:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
         <motion.p
-          className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
+          className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.2em] mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -34,11 +34,11 @@ export function ShowcaseSection() {
           Showcase
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {showcaseImages.map((src, i) => (
             <motion.div
               key={i}
-              className="relative h-[400px] md:h-[500px] rounded-xl overflow-hidden group"
+              className="relative h-[360px] md:h-[460px] rounded-2xl overflow-hidden group border border-border/80 shadow-[0_18px_38px_-24px_rgba(0,0,0,0.5)]"
               style={{ y: yValues[i] }}
               initial={{ clipPath: "inset(100% 0 0 0)" }}
               whileInView={{ clipPath: "inset(0 0 0 0)" }}

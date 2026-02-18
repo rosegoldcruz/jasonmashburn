@@ -16,10 +16,10 @@ export function CarouselSection() {
   const items = [...portfolioItems, ...portfolioItems]
 
   return (
-    <section className="bg-primary py-24 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 mb-12">
+    <section className="bg-secondary/65 py-20 md:py-22 overflow-hidden border-y border-border/70">
+      <div className="max-w-7xl mx-auto px-5 md:px-8 mb-10">
         <motion.h2
-          className="text-3xl md:text-4xl font-serif text-primary-foreground"
+          className="text-4xl md:text-5xl font-serif text-foreground leading-[0.95]"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -30,7 +30,7 @@ export function CarouselSection() {
 
       <div className="relative">
         <motion.div
-          className="flex gap-6"
+          className="flex gap-5 md:gap-6"
           animate={{ x: [0, "-50%"] }}
           transition={{
             duration: 30,
@@ -41,7 +41,7 @@ export function CarouselSection() {
           {items.map((src, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[400px] rounded-xl overflow-hidden shadow-2xl"
+              className="flex-shrink-0 w-[290px] md:w-[360px] rounded-2xl overflow-hidden shadow-[0_24px_50px_-30px_rgba(0,0,0,0.55)] border border-border/70"
               data-clickable
             >
               <img

@@ -80,10 +80,10 @@ function SpeedIndicator() {
 
 export function FeaturesSection() {
   return (
-    <section className="bg-background px-6 py-24">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-background px-5 md:px-8 py-20 md:py-22">
+      <div className="max-w-7xl mx-auto">
         <motion.p
-          className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
+          className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.2em] mb-6"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -91,10 +91,10 @@ export function FeaturesSection() {
           Features
         </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {/* Typography Card */}
           <motion.div
-            className="bg-secondary rounded-xl p-8 min-h-[280px] flex flex-col"
+            className="bg-secondary/80 rounded-2xl p-7 md:p-8 min-h-[265px] flex flex-col border border-border/80 shadow-[0_14px_32px_-24px_rgba(0,0,0,0.45)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -107,14 +107,14 @@ export function FeaturesSection() {
               <TypeTester />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-xl text-foreground">Typography</h3>
-              <p className="text-muted-foreground text-sm mt-1">Beautiful, responsive type that scales perfectly.</p>
+              <h3 className="font-serif text-2xl text-foreground">Typography</h3>
+              <p className="text-muted-foreground text-sm mt-2">Beautiful, responsive type that scales perfectly.</p>
             </div>
           </motion.div>
 
           {/* Layouts Card */}
           <motion.div
-            className="bg-secondary rounded-xl p-8 min-h-[280px] flex flex-col"
+            className="bg-secondary/80 rounded-2xl p-7 md:p-8 min-h-[265px] flex flex-col border border-border/80 shadow-[0_14px_32px_-24px_rgba(0,0,0,0.45)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -127,14 +127,14 @@ export function FeaturesSection() {
               <LayoutAnimation />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-xl text-foreground">Layouts</h3>
-              <p className="text-muted-foreground text-sm mt-1">Flexible grids that adapt to your content.</p>
+              <h3 className="font-serif text-2xl text-foreground">Layouts</h3>
+              <p className="text-muted-foreground text-sm mt-2">Flexible grids that adapt to your content.</p>
             </div>
           </motion.div>
 
           {/* Speed Card */}
           <motion.div
-            className="bg-secondary rounded-xl p-8 min-h-[280px] flex flex-col"
+            className="bg-secondary/80 rounded-2xl p-7 md:p-8 min-h-[265px] flex flex-col border border-border/80 shadow-[0_14px_32px_-24px_rgba(0,0,0,0.45)]"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -147,8 +147,8 @@ export function FeaturesSection() {
               <SpeedIndicator />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-xl text-foreground">Speed</h3>
-              <p className="text-muted-foreground text-sm mt-1">Blazing fast pages that keep visitors engaged.</p>
+              <h3 className="font-serif text-2xl text-foreground">Speed</h3>
+              <p className="text-muted-foreground text-sm mt-2">Blazing fast pages that keep visitors engaged.</p>
             </div>
           </motion.div>
         </div>
