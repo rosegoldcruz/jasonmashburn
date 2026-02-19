@@ -3,10 +3,24 @@
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
-const showcaseImages = [
-  "/modern-architecture-building-exterior-minimal.jpg",
-  "/fashion-model-editorial-portrait-dramatic-lighting.jpg",
-  "/interior-design-minimalist-living-room-natural-lig.jpg",
+const processSteps = [
+  {
+    title: "Initial Review",
+    description:
+      "We begin with a confidential conversation to understand your goals, assets, and long-term priorities.",
+    image: "/azluxury.png",
+  },
+  {
+    title: "Strategic Evaluation",
+    description: "I analyze your current positioning and outline structured options aligned with your objectives.",
+    image: "/jason-headshot.png",
+  },
+  {
+    title: "Implementation & Ongoing Review",
+    description:
+      "Once aligned, strategies are implemented carefully and reviewed periodically as conditions evolve.",
+    image: "/boardroom.png",
+  },
 ]
 
 export function ShowcaseSection() {
@@ -31,11 +45,20 @@ export function ShowcaseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Showcase
+          THE PROCESS
         </motion.p>
 
+        <motion.h2
+          className="text-[2.1rem] md:text-6xl font-serif leading-[0.94] md:leading-[0.92] text-foreground mb-10 md:mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          A Structured, Private Approach.
+        </motion.h2>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
-          {showcaseImages.map((src, i) => (
+          {processSteps.map((step, i) => (
             <motion.div
               key={i}
               className="relative h-[360px] md:h-[460px] rounded-2xl overflow-hidden group border border-border/80 shadow-[0_18px_38px_-24px_rgba(0,0,0,0.5)]"
@@ -51,14 +74,30 @@ export function ShowcaseSection() {
               data-clickable
             >
               <motion.img
-                src={src}
-                alt={`Showcase image ${i + 1}`}
+                src={step.image}
+                alt={step.title}
                 className="w-full h-full object-cover"
                 whileHover={{ scale: 1.1 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               />
+
+              <div className="absolute inset-x-0 bottom-0 p-5 md:p-6 bg-gradient-to-t from-background/95 via-background/70 to-transparent">
+                <span className="text-[11px] uppercase tracking-[0.16em] text-muted-foreground">Step {i + 1}</span>
+                <h3 className="mt-2 font-serif text-[1.5rem] md:text-2xl leading-[1.04] md:leading-[1.02] text-foreground">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/80">{step.description}</p>
+              </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-10 md:mt-12">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 md:px-7 py-3.5 text-sm md:text-base font-medium hover:bg-primary/90 transition-colors"
+            data-clickable
+          >
+            Schedule a Strategy Conversation
+          </a>
         </div>
       </div>
     </section>

@@ -18,14 +18,43 @@ export function CarouselSection() {
   return (
     <section className="bg-secondary/65 py-20 md:py-22 overflow-hidden border-y border-border/70">
       <div className="max-w-7xl mx-auto px-5 md:px-8 mb-10">
-        <motion.h2
-          className="text-4xl md:text-5xl font-serif text-foreground leading-[0.95]"
+        <motion.p
+          className="text-muted-foreground text-xs md:text-sm uppercase tracking-[0.2em] mb-5"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Built by creators, for creators.
+          ABOUT JASON MASHBURN
+        </motion.p>
+
+        <motion.h2
+          className="text-[2.1rem] md:text-6xl font-serif text-foreground leading-[0.94] md:leading-[0.92]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Focused on Stability and Clarity.
         </motion.h2>
+
+        <motion.div
+          className="mt-5 space-y-4 max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <p className="text-[0.96rem] md:text-lg leading-relaxed text-foreground/85">
+            I work with Arizona individuals and families who value discretion, structure, and long-term financial
+            alignment.
+          </p>
+          <p className="text-[0.96rem] md:text-lg leading-relaxed text-foreground/85">
+            As an Arizona licensed insurance agent offering products through Bankers Life, my focus is on income
+            structuring and risk-aware retirement positioning. Each client engagement is approached deliberately, with
+            careful attention to objectives, liquidity needs, and legacy considerations.
+          </p>
+          <p className="text-[0.96rem] md:text-lg leading-relaxed text-foreground/85">
+            Retirement planning should not feel rushed. It should feel structured.
+          </p>
+        </motion.div>
       </div>
 
       <div className="relative">

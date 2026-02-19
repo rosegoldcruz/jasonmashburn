@@ -8,24 +8,19 @@ import { ArrowRight } from "lucide-react"
 
 const articles = [
   {
-    title: "The Art of Visual Storytelling",
-    category: "Design",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Limited Advisory Capacity",
+    category: "Private Process",
+    image: "/azluxury.png",
   },
   {
-    title: "Building a Personal Brand Online",
-    category: "Strategy",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "Structured Retirement Evaluation",
+    category: "Strategic Review",
+    image: "/boardroom.png",
   },
   {
-    title: "Typography Trends for 2024",
-    category: "Typography",
-    image: "/typography-trends-modern-fonts.jpg",
-  },
-  {
-    title: "Minimalism in Portfolio Design",
-    category: "Inspiration",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Private, Professional Conversations",
+    category: "Client Experience",
+    image: "/jason-headshot.png",
   },
 ]
 
@@ -46,7 +41,29 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Insights
+          SCOTTSDALE | ARIZONA
+        </motion.p>
+
+        <motion.h2
+          className="text-[2.1rem] md:text-6xl font-serif leading-[0.94] md:leading-[0.92] text-foreground mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          Serving a Select Number of Arizona
+          <br className="hidden sm:block" />
+          Clients Each Year.
+        </motion.h2>
+
+        <motion.p
+          className="text-[0.96rem] md:text-lg leading-relaxed text-foreground/85 mb-8 max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          I maintain a limited advisory capacity to ensure each strategy receives proper attention and review. If you
+          are seeking a structured evaluation of your retirement positioning and prefer a private, professional
+          process, I welcome the conversation.
         </motion.p>
 
         <div className="divide-y divide-border/80 border-y border-border/80">
@@ -73,6 +90,16 @@ export function InsightsSection() {
               <ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
             </motion.a>
           ))}
+        </div>
+
+        <div className="mt-8">
+          <a
+            href="#"
+            className="inline-flex items-center justify-center rounded-lg bg-primary text-primary-foreground px-6 md:px-7 py-3.5 text-sm md:text-base font-medium hover:bg-primary/90 transition-colors"
+            data-clickable
+          >
+            Request a Confidential Review
+          </a>
         </div>
 
         {/* Floating hover image */}

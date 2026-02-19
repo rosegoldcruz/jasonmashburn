@@ -88,7 +88,7 @@ export function FeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Features
+          CORE STRATEGIES
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
@@ -107,8 +107,11 @@ export function FeaturesSection() {
               <TypeTester />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-2xl text-foreground">Typography</h3>
-              <p className="text-muted-foreground text-sm mt-2">Beautiful, responsive type that scales perfectly.</p>
+              <h3 className="font-serif text-2xl text-foreground">Fixed Income Planning</h3>
+              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                Structured annuity strategies designed to provide defined income streams while reducing exposure to
+                market swings.
+              </p>
             </div>
           </motion.div>
 
@@ -127,8 +130,11 @@ export function FeaturesSection() {
               <LayoutAnimation />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-2xl text-foreground">Layouts</h3>
-              <p className="text-muted-foreground text-sm mt-2">Flexible grids that adapt to your content.</p>
+              <h3 className="font-serif text-2xl text-foreground">Asset Repositioning</h3>
+              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                Strategic evaluation of 401(k)s and IRAs to determine whether a portion should be repositioned for
+                income efficiency and principal protection where appropriate.
+              </p>
             </div>
           </motion.div>
 
@@ -147,8 +153,11 @@ export function FeaturesSection() {
               <SpeedIndicator />
             </div>
             <div className="mt-4">
-              <h3 className="font-serif text-2xl text-foreground">Speed</h3>
-              <p className="text-muted-foreground text-sm mt-2">Blazing fast pages that keep visitors engaged.</p>
+              <h3 className="font-serif text-2xl text-foreground">Legacy Alignment</h3>
+              <p className="text-muted-foreground text-sm mt-2 leading-relaxed">
+                Indexed life insurance strategies structured to support tax-aware wealth transfer and long-term
+                planning objectives.
+              </p>
             </div>
           </motion.div>
         </div>

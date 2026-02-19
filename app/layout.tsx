@@ -14,10 +14,10 @@ const _instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
-  title: "Opus – The Editorial Portfolio Platform",
+  title: "Jason Mashburn | Scottsdale Retirement Income",
   description:
-    "A website builder designed for writers, photographers, and architects who need a narrative-driven portfolio.",
-  generator: "v0.app",
+    "Structured retirement income guidance for Arizona retirees and pre-retirees, focused on stability, clarity, and private consultations.",
+  generator: "Aeon",
   icons: {
     icon: [
       {
