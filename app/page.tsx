@@ -106,21 +106,65 @@ export default function Home() {
 
       <section className="py-24">
         <div className="container-shell">
-          <div className="grid gap-6 md:grid-cols-[1fr_1.15fr] md:items-center">
-            <motion.div {...cardAnimation} className="glass-panel overflow-hidden rounded-3xl">
-              <img src="/jason3.jpeg" alt="Jason consultation" className="h-full w-full object-cover md:hidden" />
-              <img src="/jason2.jpeg" alt="Jason consultation" className="hidden h-full w-full object-cover md:block" />
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Advisor Credibility</p>
+          <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Strategic Retirement Planning, Not Product Sales.</h2>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-[1.08fr_1fr] lg:items-start">
+            <motion.div {...cardAnimation} className="glass-panel relative min-h-[360px] overflow-hidden rounded-3xl sm:min-h-[460px]">
+              <img
+                src="/Without_changing_the_202602250426.gif"
+                alt="Planning consultation in progress"
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-primary/24" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/48 via-primary/18 to-transparent" />
             </motion.div>
 
-            <motion.div {...cardAnimation} className="glass-panel-strong rounded-3xl p-8 text-primary-foreground sm:p-10">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Advisor Credibility</p>
-              <h2 className="mt-3 text-3xl sm:text-5xl">Strategic Retirement Planning, Not Product Sales.</h2>
-              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
-                Every engagement starts with a structured review of your current assets, liabilities, timeline, and protection needs.
-                The objective is fiduciary-minded planning discipline: clear recommendations, transparent assumptions, and strategy
-                design focused on long-term alignment rather than one-time transactions.
-              </p>
-            </motion.div>
+            <div className="grid gap-4">
+              {[
+                {
+                  title: "Structured Review First",
+                  points: [
+                    "Clarify risk exposure, timeline, and income targets before product selection.",
+                    "Use transparent assumptions and scenario-based design.",
+                  ],
+                },
+                {
+                  title: "Fiduciary-Minded Process",
+                  points: [
+                    "Recommendations are framed around alignment, not one-time transactions.",
+                    "Each design decision is mapped to protection and tax awareness goals.",
+                  ],
+                },
+                {
+                  title: "Long-Term Policy Management",
+                  points: [
+                    "Build around defined income and durability checkpoints.",
+                    "Review funding and performance to keep strategy on track over time.",
+                  ],
+                },
+              ].map((item) => (
+                <motion.article
+                  key={item.title}
+                  {...cardAnimation}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  transition={{ duration: 0.2 }}
+                  className="glass-panel rounded-2xl p-6"
+                >
+                  <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
+                  <h3 className="text-2xl leading-tight text-primary">{item.title}</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-2">
+                        <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-accent" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
