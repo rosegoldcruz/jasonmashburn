@@ -191,26 +191,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 text-primary-foreground">
+      <section className="py-24">
         <div className="container-shell">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">IUL Education</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">How Indexed Universal Life Works in a Structured Plan</h2>
+          <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+            <motion.div
+              {...cardAnimation}
+              className="relative aspect-[4/5] max-w-md overflow-hidden rounded-3xl lg:max-w-none"
+            >
+              <img
+                src="/jason-headshot.png"
+                alt="Jason Mashburn"
+                className="h-full w-full object-cover"
+              />
+            </motion.div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {[
-              "Indexed crediting is tied to external index performance with a floor, helping avoid direct market losses while supporting measured growth potential.",
-              "Policy value can be accessed through structured loans to support defined income design when coordinated with broader retirement planning.",
-              "Protection riders and disciplined funding help align policy structure with family security, liquidity goals, and long-term planning priorities.",
-            ].map((item, index) => (
-              <motion.div
-                key={item}
-                {...cardAnimation}
-                className={`glass-panel rounded-2xl p-7 ${index === 1 ? "md:translate-y-5" : ""}`}
-              >
-                <div className="mb-4 h-[2px] w-10 rounded-full bg-accent/85" />
-                <p className="text-sm leading-relaxed text-primary-foreground/92">{item}</p>
-              </motion.div>
-            ))}
+            <motion.div {...cardAnimation} className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">About</p>
+              <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Jason Mashburn</h2>
+
+              <div className="mt-6 space-y-4 text-muted-foreground">
+                <p>
+                  I'm Jason Mashburn, an Arizona-licensed retirement income specialist based in Scottsdale.
+                </p>
+                <p>
+                  My work centers on helping retirees and business owners transition from asset accumulation to structured retirement income. After decades of building businesses, funding qualified plans, and managing investments, the challenge shifts from growth to sustainability.
+                </p>
+                <p>
+                  I design strategies using fixed annuities and indexed life insurance to address income continuity, principal protection where appropriate, and long-term distribution planning. These tools are evaluated within the context of each client's broader financial objectives and risk tolerance.
+                </p>
+                <p>
+                  Retirement income planning is not about chasing returns. It is about creating a framework that supports dependable cash flow, tax efficiency, and disciplined allocation decisions through varying market conditions.
+                </p>
+                <p>
+                  I work with individuals throughout Scottsdale, Paradise Valley, North Scottsdale, Cave Creek, and the greater Arizona market who value clarity, structure, and thoughtful financial positioning.
+                </p>
+                <p>
+                  My approach is analytical and process-driven. Each engagement begins with a detailed review of assets, liabilities, income needs, and long-term objectives to determine whether structured insurance strategies align with the client's retirement plan.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
