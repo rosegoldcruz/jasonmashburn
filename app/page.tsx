@@ -214,7 +214,7 @@ export default function Home() {
           <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Real Planning Conversations. Real Outcomes.</h2>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {["/6991de95-385c-4926-bef4-0dde9b958465.png", "/jason1.jpeg", "/jason4.jpeg"].map((image) => (
+            {["/Business%20owner%20rollover.jpeg", "/pre-retiree.jpeg", "/widow.jpeg"].map((image) => (
               <motion.div key={image} {...cardAnimation} className="glass-panel overflow-hidden rounded-2xl">
                 <img src={image} alt="Planning meeting" className="h-72 w-full object-cover" />
               </motion.div>
