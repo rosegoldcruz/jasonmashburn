@@ -110,15 +110,13 @@ export default function Home() {
           <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Strategic Retirement Planning, Not Product Sales.</h2>
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.08fr_1fr] lg:items-start">
-            <motion.div {...cardAnimation} className="glass-panel relative min-h-[360px] overflow-hidden rounded-3xl sm:min-h-[460px]">
+            <motion.div {...cardAnimation} className="relative min-h-[360px] overflow-hidden rounded-3xl sm:min-h-[460px]">
               <img
                 src="/Without_changing_the_202602250426.gif"
                 alt="Planning consultation in progress"
                 loading="lazy"
                 className="h-full w-full object-cover"
               />
-              <div className="absolute inset-0 bg-primary/24" />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/48 via-primary/18 to-transparent" />
             </motion.div>
 
             <div className="grid gap-4">
@@ -144,50 +142,6 @@ export default function Home() {
                     "Review funding and performance to keep strategy on track over time.",
                   ],
                 },
-              ].map((item) => (
-                <motion.article
-                  key={item.title}
-                  {...cardAnimation}
-                  whileHover={{ y: -4, scale: 1.01 }}
-                  transition={{ duration: 0.2 }}
-                  className="glass-panel rounded-2xl p-6"
-                >
-                  <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
-                  <h3 className="text-2xl leading-tight text-primary">{item.title}</h3>
-                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.points.map((point) => (
-                      <li key={point} className="flex gap-2">
-                        <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-accent" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24">
-        <div className="container-shell">
-          <div className="mb-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Retirement Income Strategy</p>
-            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Structured Retirement Income Planning</h2>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-            <motion.div {...cardAnimation} className="glass-panel overflow-hidden rounded-3xl">
-              <img src="/Thank you.png" alt="Document review meeting" className="h-full w-full object-cover md:hidden" />
-              <img
-                src="/4d17b2db-14bf-49e6-9b8a-78ec0c9a2274.png"
-                alt="Structured retirement planning review"
-                className="hidden h-full w-full object-cover md:block"
-              />
-            </motion.div>
-
-            <div className="grid gap-5">
-              {[
                 {
                   title: "Protection-First Allocation",
                   points: [
@@ -210,9 +164,15 @@ export default function Home() {
                   ],
                 },
               ].map((item) => (
-                <motion.article key={item.title} {...cardAnimation} className="glass-panel rounded-2xl p-7">
+                <motion.article
+                  key={item.title}
+                  {...cardAnimation}
+                  whileHover={{ y: -4, scale: 1.01 }}
+                  transition={{ duration: 0.2 }}
+                  className="rounded-2xl bg-[rgb(255_255_255/0.08)] p-6 border border-[rgb(255_255_255/0.12)]"
+                >
                   <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
-                  <h3 className="text-[1.65rem] leading-tight text-primary">{item.title}</h3>
+                  <h3 className="text-2xl leading-tight text-primary">{item.title}</h3>
                   <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
                     {item.points.map((point) => (
                       <li key={point} className="flex gap-2">
