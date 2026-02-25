@@ -29,55 +29,55 @@ export default function Home() {
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
           <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-primary/34" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/48 via-primary/14 to-transparent" />
+        <div className="absolute inset-0 bg-primary/18" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/62 via-primary/22 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/58 to-transparent" />
 
-        <div className="container-shell relative z-10 py-28 sm:py-40">
-          <div className="grid items-end gap-8 lg:grid-cols-[1.08fr_0.74fr]">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65 * profile.motionDurationScale }}
-              className="rounded-3xl border border-white/24 bg-primary/18 p-8 shadow-[0_22px_65px_-40px_rgba(4,10,20,0.9)] backdrop-blur-[5px] sm:p-12"
-            >
-              <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">Arizona Indexed Universal Life Planning</p>
-              <h1 className="text-4xl leading-[1.01] text-primary-foreground sm:text-6xl">
-                Build tax-free retirement income with IUL strategies designed to protect principal and preserve flexibility.
-              </h1>
-              <p className="mt-6 max-w-2xl text-base leading-relaxed text-primary-foreground/92 sm:text-lg">
-                Jason Mashburn helps Arizona families and high-income professionals use Indexed Universal Life for downside
-                protection, tax-advantaged growth potential, and access to living benefits.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
-                  <Link href="/how-it-works" data-major-cta>See How IUL Works</Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="outline"
-                  className="h-11 rounded-full border-primary-foreground bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/10"
+        <div className="container-shell relative z-10 py-30 sm:py-44">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65 * profile.motionDurationScale }}
+            className="max-w-4xl"
+          >
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Arizona Indexed Universal Life Planning</p>
+            <h1 className="text-4xl leading-[1.02] text-primary-foreground [text-shadow:0_6px_24px_rgba(0,0,0,0.5)] sm:text-6xl">
+              Build tax-free retirement income with IUL strategies designed to protect principal and preserve flexibility.
+            </h1>
+            <p className="mt-6 max-w-3xl text-base leading-relaxed text-primary-foreground/95 [text-shadow:0_3px_16px_rgba(0,0,0,0.35)] sm:text-lg">
+              Jason Mashburn helps Arizona families and high-income professionals use Indexed Universal Life for downside protection,
+              tax-advantaged growth potential, and access to living benefits.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
+                <Link href="/how-it-works" data-major-cta>See How IUL Works</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="h-11 rounded-full border-primary-foreground bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/12"
+              >
+                <Link href="/apply" data-major-cta>Apply Now</Link>
+              </Button>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              {[
+                "Arizona Licensed",
+                "Products through Bankers Life",
+                "IUL-Focused Retirement Strategy",
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/25 bg-white/8 px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-primary-foreground/92 backdrop-blur-sm"
                 >
-                  <Link href="/apply" data-major-cta>Apply Now</Link>
-                </Button>
-              </div>
-            </motion.div>
-
-            <motion.aside
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.78 * profile.motionDurationScale, delay: 0.12 }}
-              className="hidden rounded-3xl border border-white/18 bg-primary/14 p-8 text-primary-foreground shadow-[0_20px_55px_-40px_rgba(4,10,20,0.85)] backdrop-blur-[4px] lg:block"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Capital Preservation Blueprint</p>
-              <h2 className="mt-3 text-3xl leading-tight">Secure the floor. Engineer upside.</h2>
-              <div className="mt-6 space-y-4 border-t border-white/18 pt-5">
-                <p className="text-sm text-primary-foreground/88">01 — Retirement liquidity via policy loan architecture</p>
-                <p className="text-sm text-primary-foreground/88">02 — Index-linked growth with principal-protection logic</p>
-                <p className="text-sm text-primary-foreground/88">03 — Living + legacy benefits in one contract strategy</p>
-              </div>
-            </motion.aside>
-          </div>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
