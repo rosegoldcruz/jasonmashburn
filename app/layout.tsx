@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { LenisProvider } from "@/components/lenis-provider"
 import { SiteFooter } from "@/components/site/site-footer"
 import { SiteHeader } from "@/components/site/site-header"
 import { ChatWidget } from "@/components/site/chat-widget"
@@ -32,12 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-        <MobileFloatingCta />
-        <ChatWidget />
-        <Analytics />
+        <LenisProvider>
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+          <MobileFloatingCta />
+          <ChatWidget />
+          <Analytics />
+        </LenisProvider>
       </body>
     </html>
   )

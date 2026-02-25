@@ -9,18 +9,23 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
+import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 export default function Home() {
+  const profile = useAdaptiveMotion()
+
   const cardAnimation = {
     initial: { opacity: 0, y: 26 },
     whileInView: { opacity: 1, y: 0 },
     viewport: { once: true, amount: 0.25 },
-    transition: { duration: 0.55 },
+    transition: { duration: 0.55 * profile.motionDurationScale },
   }
 
   return (
     <main className="bg-background pt-20">
       <section className="relative isolate overflow-hidden">
+        <HeroParallaxLayers />
         <video
           autoPlay
           loop
@@ -35,7 +40,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65 }}
+            transition={{ duration: 0.65 * profile.motionDurationScale }}
             className="max-w-3xl"
           >
             <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
