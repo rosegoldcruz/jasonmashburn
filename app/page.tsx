@@ -111,12 +111,15 @@ export default function Home() {
 
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.08fr_1fr] lg:items-start">
             <motion.div {...cardAnimation} className="relative min-h-[360px] overflow-hidden rounded-3xl sm:min-h-[460px]">
-              <img
-                src="/Without_changing_the_202602250426.gif"
-                alt="Planning consultation in progress"
-                loading="lazy"
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="h-full w-full object-cover"
-              />
+              >
+                <source src="/Without_changing_the_202602250426.mp4" type="video/mp4" />
+              </video>
             </motion.div>
 
             <div className="grid gap-4">
