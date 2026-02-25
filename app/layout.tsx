@@ -1,40 +1,27 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Instrument_Serif } from "next/font/google"
+import { Inter, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { SiteFooter } from "@/components/site/site-footer"
+import { SiteHeader } from "@/components/site/site-header"
+import { ChatWidget } from "@/components/site/chat-widget"
+import { MobileFloatingCta } from "@/components/site/mobile-floating-cta"
 import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _instrumentSerif = Instrument_Serif({
+const inter = Inter({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  variable: "--font-inter",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
 })
 
 export const metadata: Metadata = {
-  title: "Jason Mashburn | Scottsdale Retirement Income",
+  title: "Jason Mashburn | Arizona IUL Strategies",
   description:
-    "Structured retirement income guidance for Arizona retirees and pre-retirees, focused on stability, clarity, and private consultations.",
-  generator: "Aeon",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+    "Tax-advantaged Indexed Universal Life education and policy design for Arizona families, business owners, and pre-retirees.",
 }
 
 export default function RootLayout({
@@ -44,8 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <SiteHeader />
         {children}
+        <SiteFooter />
+        <MobileFloatingCta />
+        <ChatWidget />
         <Analytics />
       </body>
     </html>

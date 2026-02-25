@@ -4,38 +4,31 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Scottsdale Private Office Theme */
-  --background: 248 244 236;
-  --foreground: 37 40 44;
-  --surface: 241 236 226;
-  --ink: 37 40 44;
-  --iris: 73 97 128;
-  --lilac: 186 158 101;
-  --lime: 176 188 166;
-  --muted-foreground: 103 105 108;
-
-  --card: 252 249 243;
-  --card-foreground: 37 40 44;
-  --popover: 252 249 243;
-  --popover-foreground: 37 40 44;
-  --primary: 73 97 128;
-  --primary-foreground: 248 244 236;
-  --secondary: 239 233 223;
-  --secondary-foreground: 37 40 44;
-  --muted: 235 229 218;
-  --accent: 186 158 101;
-  --accent-foreground: 37 40 44;
+  --background: 248 246 241;
+  --foreground: 10 22 40;
+  --card: 255 255 255;
+  --card-foreground: 10 22 40;
+  --popover: 255 255 255;
+  --popover-foreground: 10 22 40;
+  --primary: 10 22 40;
+  --primary-foreground: 248 246 241;
+  --secondary: 240 236 228;
+  --secondary-foreground: 10 22 40;
+  --muted: 239 235 227;
+  --muted-foreground: 92 103 120;
+  --accent: 201 168 76;
+  --accent-foreground: 10 22 40;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: 213 206 193;
-  --input: 213 206 193;
-  --ring: 73 97 128;
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: 225 219 206;
+  --input: 225 219 206;
+  --ring: 201 168 76;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.75rem;
+  --radius: 0.9rem;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -47,25 +40,25 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: 9 18 33;
+  --foreground: 248 246 241;
+  --card: 13 27 48;
+  --card-foreground: 248 246 241;
+  --popover: 13 27 48;
+  --popover-foreground: 248 246 241;
+  --primary: 248 246 241;
+  --primary-foreground: 10 22 40;
+  --secondary: 20 35 58;
+  --secondary-foreground: 248 246 241;
+  --muted: 20 35 58;
+  --muted-foreground: 196 203 214;
+  --accent: 201 168 76;
+  --accent-foreground: 10 22 40;
   --destructive: oklch(0.396 0.141 25.723);
   --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.269 0 0);
-  --input: oklch(0.269 0 0);
-  --ring: oklch(0.439 0 0);
+  --border: 36 53 79;
+  --input: 36 53 79;
+  --ring: 201 168 76;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -82,18 +75,10 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Geist Fallback";
-  --font-serif: "Instrument Serif", "Georgia", serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
-
-  /* Fixed color mappings to use rgb() format for Tailwind v4 */
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-serif: var(--font-playfair), "Playfair Display", serif;
   --color-background: rgb(var(--background));
   --color-foreground: rgb(var(--foreground));
-  --color-surface: rgb(var(--surface));
-  --color-ink: rgb(var(--ink));
-  --color-iris: rgb(var(--iris));
-  --color-lilac: rgb(var(--lilac));
-  --color-lime: rgb(var(--lime));
   --color-card: rgb(var(--card));
   --color-card-foreground: rgb(var(--card-foreground));
   --color-popover: rgb(var(--popover));
@@ -128,28 +113,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
 }
 
 @layer base {
@@ -158,58 +121,27 @@
   }
   html {
     text-rendering: geometricPrecision;
+    scroll-behavior: smooth;
   }
   body {
     @apply bg-background text-foreground antialiased;
-    line-height: 1.5;
-    background-image:
-      radial-gradient(circle at 15% 12%, rgb(var(--accent) / 0.1), transparent 34%),
-      radial-gradient(circle at 85% 4%, rgb(var(--primary) / 0.1), transparent 36%);
+    line-height: 1.55;
   }
-  h1,
+  h1 {
+    @apply font-serif;
+    letter-spacing: -0.03em;
+  }
   h2,
-  h3 {
+  h3,
+  h4 {
+    @apply font-serif;
     letter-spacing: -0.02em;
   }
+  a {
+    @apply transition-colors;
+  }
 }
 
-/* Custom cursor styles */
-.custom-cursor {
-  cursor: none;
-}
-
-/* Serrated ticket edge */
-.ticket-edge {
-  mask-image: radial-gradient(circle at 0 50%, transparent 8px, black 8px),
-    radial-gradient(circle at 100% 50%, transparent 8px, black 8px);
-  mask-size: 51% 100%;
-  mask-position: left, right;
-  mask-repeat: no-repeat;
-}
-
-/* Ensure html has non-static position for scroll offset calculation (framer-motion + Lenis) */
-html {
-  position: relative;
-}
-
-/* Smooth scrolling with Lenis */
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
 }
