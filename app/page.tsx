@@ -12,7 +12,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 export default function Home() {
@@ -62,10 +61,8 @@ export default function Home() {
   return (
     <main className="pt-20 text-foreground">
       <section ref={heroRef} className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden">
-        <HeroParallaxLayers />
-        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
-          <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
-        </video>
+        <img src="/azluxury.png" alt="Arizona luxury homes" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+        <img src="/1.jpg" alt="Scottsdale luxury home" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
         <div className="absolute inset-0 bg-primary/18" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/62 via-primary/22 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/58 to-transparent" />
@@ -77,18 +74,18 @@ export default function Home() {
             transition={{ duration: 0.65 * profile.motionDurationScale }}
             className="max-w-4xl"
           >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Arizona Indexed Universal Life Planning</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Arizona IUL Planning Specialist</p>
             <h1 className="text-4xl leading-[1.02] text-primary-foreground [text-shadow:0_6px_24px_rgba(0,0,0,0.5)] sm:text-6xl">
-              Build tax-free retirement income with IUL strategies designed to protect principal and preserve flexibility.
+              Build Tax-Efficient Retirement Income with Structured IUL Strategies
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-primary-foreground/95 [text-shadow:0_3px_16px_rgba(0,0,0,0.35)] sm:text-lg">
-              Jason Mashburn helps Arizona families and high-income professionals use Indexed Universal Life for downside protection,
-              tax-advantaged growth potential, and access to living benefits.
+              Protect what you have built while creating clearer income pathways for retirement. Every recommendation is structured
+              around protection, tax awareness, and long-term income alignment.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
-                <Link href="/how-it-works" data-major-cta>See How IUL Works</Link>
+                <Link href="/apply" data-major-cta>Request Custom Illustration</Link>
               </Button>
               <Button
                 asChild
@@ -96,7 +93,7 @@ export default function Home() {
                 variant="outline"
                 className="h-11 rounded-full border-primary-foreground bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/12"
               >
-                <Link href="/apply" data-major-cta>Apply Now</Link>
+                <Link href="/how-it-works" data-major-cta>See Planning Framework</Link>
               </Button>
             </div>
 
@@ -106,53 +103,94 @@ export default function Home() {
 
       <section className="py-24">
         <div className="container-shell">
-          <div className="mb-10 flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Core Value</p>
-              <h2 className="mt-3 text-3xl text-primary sm:text-5xl">What Is an IUL?</h2>
-            </div>
-            <span className="hidden text-xs uppercase tracking-[0.18em] text-primary-foreground/70 md:inline">Risk-managed accumulation</span>
+          <div className="grid gap-6 md:grid-cols-[1fr_1.15fr] md:items-center">
+            <motion.div {...cardAnimation} className="glass-panel overflow-hidden rounded-3xl">
+              <img src="/jason3.jpeg" alt="Jason consultation" className="h-full w-full object-cover md:hidden" />
+              <img src="/jason2.jpeg" alt="Jason consultation" className="hidden h-full w-full object-cover md:block" />
+            </motion.div>
+
+            <motion.div {...cardAnimation} className="glass-panel-strong rounded-3xl p-8 text-primary-foreground sm:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Advisor Credibility</p>
+              <h2 className="mt-3 text-3xl sm:text-5xl">Strategic Retirement Planning, Not Product Sales.</h2>
+              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+                Every engagement starts with a structured review of your current assets, liabilities, timeline, and protection needs.
+                The objective is fiduciary-minded planning discipline: clear recommendations, transparent assumptions, and strategy
+                design focused on long-term alignment rather than one-time transactions.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container-shell">
+          <div className="mb-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Retirement Income Strategy</p>
+            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Structured Retirement Income Planning</h2>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-6">
-            <motion.article {...cardAnimation} className="glass-panel rounded-2xl p-7 md:col-span-3 md:row-span-2">
-              <div className="mb-4 h-[2px] w-14 rounded-full bg-accent/85" />
-              <h3 className="text-3xl leading-tight text-primary">Tax-Free Growth Potential</h3>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                Cash value growth can be accessed through policy loans structured to support supplemental retirement income.
-                Built correctly, this creates a distinct tax-diversification lane beyond traditional qualified plans.
-              </p>
-            </motion.article>
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+            <motion.div {...cardAnimation} className="glass-panel overflow-hidden rounded-3xl">
+              <img src="/Thank you.png" alt="Document review meeting" className="h-full w-full object-cover md:hidden" />
+              <img
+                src="/4d17b2db-14bf-49e6-9b8a-78ec0c9a2274.png"
+                alt="Structured retirement planning review"
+                className="hidden h-full w-full object-cover md:block"
+              />
+            </motion.div>
 
-            <motion.article {...cardAnimation} className="glass-panel rounded-2xl p-7 md:col-span-3">
-              <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
-              <h3 className="text-[1.65rem] leading-tight text-primary">Principal Protection</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Indexed strategies include a floor, helping protect against direct market loss while allowing capped upside participation.
-              </p>
-            </motion.article>
-
-            <motion.article {...cardAnimation} className="glass-panel rounded-2xl p-7 md:col-span-3">
-              <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
-              <h3 className="text-[1.65rem] leading-tight text-primary">Living Benefits</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Modern IUL designs can include accelerated benefit riders for qualifying chronic, critical, or terminal conditions.
-              </p>
-            </motion.article>
+            <div className="grid gap-5">
+              {[
+                {
+                  title: "Protection-First Allocation",
+                  points: [
+                    "Design around downside protection before growth assumptions.",
+                    "Reduce sequence risk pressure during early retirement years.",
+                  ],
+                },
+                {
+                  title: "Defined Income Mapping",
+                  points: [
+                    "Model when and how policy access supports retirement cash flow.",
+                    "Coordinate income phases with Social Security and other assets.",
+                  ],
+                },
+                {
+                  title: "Tax-Aware Structure",
+                  points: [
+                    "Build tax-diversified distribution options for future flexibility.",
+                    "Stress-test assumptions for long-term sustainability.",
+                  ],
+                },
+              ].map((item) => (
+                <motion.article key={item.title} {...cardAnimation} className="glass-panel rounded-2xl p-7">
+                  <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
+                  <h3 className="text-[1.65rem] leading-tight text-primary">{item.title}</h3>
+                  <ul className="mt-3 space-y-2 text-sm leading-relaxed text-muted-foreground">
+                    {item.points.map((point) => (
+                      <li key={point} className="flex gap-2">
+                        <span className="mt-[6px] h-1.5 w-1.5 rounded-full bg-accent" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="py-24 text-primary-foreground">
         <div className="container-shell">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Ideal Client Profile</p>
-          <h2 className="mt-3 text-3xl sm:text-5xl">Who This Is For</h2>
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">IUL Education</p>
+          <h2 className="mt-3 text-3xl sm:text-5xl">How Indexed Universal Life Works in a Structured Plan</h2>
 
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
-              "Pre-retirees who want additional tax diversification beyond qualified plans.",
-              "Business owners looking for flexible premium design and policy-backed liquidity.",
-              "High earners who are already maxing out 401(k) and IRA options and still need tax-advantaged accumulation.",
+              "Indexed crediting is tied to external index performance with a floor, helping avoid direct market losses while supporting measured growth potential.",
+              "Policy value can be accessed through structured loans to support defined income design when coordinated with broader retirement planning.",
+              "Protection riders and disciplined funding help align policy structure with family security, liquidity goals, and long-term planning priorities.",
             ].map((item, index) => (
               <motion.div
                 key={item}
@@ -169,14 +207,43 @@ export default function Home() {
 
       <section className="py-24">
         <div className="container-shell">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Visual Proof</p>
+          <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Real Planning Conversations. Real Outcomes.</h2>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {["/6991de95-385c-4926-bef4-0dde9b958465.png", "/jason1.jpeg", "/jason4.jpeg"].map((image) => (
+              <motion.div key={image} {...cardAnimation} className="glass-panel overflow-hidden rounded-2xl">
+                <img src={image} alt="Planning meeting" className="h-72 w-full object-cover" />
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {[
+              ["Business owner rollover", "A business owner evaluates rollover timing and uses structured IUL design to add tax-aware income flexibility."],
+              ["Pre-retiree asset restructuring", "A pre-retiree rebalances exposure and aligns protected accumulation with an income date and withdrawal sequence."],
+              ["Widow income stabilization", "A surviving spouse reviews household cash flow and restructures for steadier income, protection continuity, and clearer planning decisions."],
+            ].map(([title, copy]) => (
+              <motion.article key={title} {...cardAnimation} className="glass-panel rounded-2xl p-7">
+                <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
+                <h3 className="text-2xl leading-tight text-primary">{title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24">
+        <div className="container-shell">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Implementation</p>
-          <h2 className="mt-3 text-3xl text-primary sm:text-5xl">The Process</h2>
+          <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Our Structured Planning Process</h2>
 
           <div className="mt-10 space-y-4">
             {[
-              ["01", "Consultation", "Review current strategy, retirement timeline, and protection priorities."],
-              ["02", "Custom Illustration", "Evaluate carrier illustration scenarios with cap, participation, and funding design."],
-              ["03", "Policy Design", "Finalize underwriting path and structure policy details around your objective."],
+              ["01", "Discovery Review", "Define protection priorities, tax posture, and retirement income objectives with full balance-sheet context."],
+              ["02", "Structured Illustration Modeling", "Compare funding and distribution scenarios to identify designs that support defined income and policy durability."],
+              ["03", "Implementation and Alignment", "Execute underwriting and policy setup with clear benchmarks for ongoing monitoring and long-term strategy fit."],
             ].map(([n, t, c]) => (
               <motion.div key={t} {...cardAnimation} className="glass-panel rounded-2xl p-7 md:grid md:grid-cols-[100px_260px_1fr] md:items-start md:gap-6">
                 <p className="text-sm font-semibold tracking-[0.16em] text-accent">{n}</p>
@@ -204,39 +271,40 @@ export default function Home() {
       <section className="py-24">
         <div className="container-shell grid gap-6 lg:grid-cols-[1fr_1.55fr]">
           <div className="glass-panel rounded-2xl p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Clarity</p>
-            <h2 className="mt-3 text-3xl text-primary sm:text-4xl">Frequently Asked Questions</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Objection Handling</p>
+            <h2 className="mt-3 text-3xl text-primary sm:text-4xl">Common Questions About IUL</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Transparent answers on policy mechanics, taxation, and retirement-income structure.
+              Neutral, educational guidance on structure, taxation, and planning assumptions.
             </p>
           </div>
 
           <Accordion type="single" collapsible className="glass-panel rounded-2xl px-7">
             <AccordionItem value="q1">
-              <AccordionTrigger>How is IUL different from a Roth IRA?</AccordionTrigger>
+              <AccordionTrigger>How does IUL fit with other retirement accounts?</AccordionTrigger>
               <AccordionContent>
-                Roth IRAs have annual contribution limits and income restrictions, while properly structured IUL policies can provide flexible
-                premium funding and tax-advantaged access through loans.
+                IUL is typically positioned as one layer of a broader plan. It can complement qualified accounts by offering additional
+                tax-diversified access and protection-oriented design when structured appropriately.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="q2">
-              <AccordionTrigger>How does indexing work if the market drops?</AccordionTrigger>
+              <AccordionTrigger>What happens to policy crediting in down markets?</AccordionTrigger>
               <AccordionContent>
-                Indexed crediting links to an external index with a floor rate, which means the policy is designed to avoid direct index losses
-                in negative years, subject to carrier terms.
+                Indexed strategies use carrier-defined floors and caps. The floor helps limit downside crediting in negative index years,
+                while upside participation remains subject to policy terms.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="q3">
-              <AccordionTrigger>How do policy loans support retirement income?</AccordionTrigger>
+              <AccordionTrigger>How is income modeled from a policy?</AccordionTrigger>
               <AccordionContent>
-                Policy loans are typically not treated as taxable income when the policy remains in force and properly managed. Loan terms vary by
-                carrier and product design.
+                Income modeling evaluates timing, loan assumptions, and policy sustainability under different scenarios. The goal is defined,
+                manageable distributions aligned with long-term policy health.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="q4">
-              <AccordionTrigger>Is an illustration a guarantee?</AccordionTrigger>
+              <AccordionTrigger>Are illustration results guaranteed?</AccordionTrigger>
               <AccordionContent>
-                No. Illustrations are hypothetical projections based on current assumptions, not guaranteed outcomes.
+                No. Illustrations are hypothetical and based on current assumptions. They are used for planning clarity and scenario review,
+                not as guaranteed performance outcomes.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -245,14 +313,20 @@ export default function Home() {
 
       <section className="pb-28">
         <div className="container-shell">
-          <div className="glass-panel-strong rounded-3xl px-8 py-12 text-primary-foreground sm:px-12">
-            <h2 className="text-3xl sm:text-4xl">Get Your Custom IUL Illustration — Free</h2>
-            <p className="mt-4 max-w-2xl text-sm text-primary-foreground/88">
-              Get a personalized illustration designed around your contribution target, retirement horizon, and protection priorities.
-            </p>
-            <Button asChild className="mt-7 h-11 bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="/apply" data-major-cta>Start Your Illustration Request</Link>
-            </Button>
+          <div className="glass-panel-strong grid overflow-hidden rounded-3xl text-primary-foreground md:grid-cols-[1fr_1.05fr]">
+            <div className="order-2 px-8 py-12 sm:px-12 md:order-1">
+              <h2 className="text-3xl sm:text-4xl">Request Your Custom IUL Illustration</h2>
+              <p className="mt-4 max-w-2xl text-sm text-primary-foreground/88">
+                Get structured clarity on protection, tax-aware design, and defined income modeling based on your real timeline and objectives.
+              </p>
+              <Button asChild className="mt-7 h-11 bg-accent text-accent-foreground hover:bg-accent/90">
+                <Link href="/apply" data-major-cta>Request Custom Illustration</Link>
+              </Button>
+            </div>
+            <div className="order-1 min-h-72 md:order-2 md:min-h-full">
+              <img src="/jason3.jpeg" alt="Jason Mashburn advisory consultation" className="h-full w-full object-cover md:hidden" />
+              <img src="/jason2.jpeg" alt="Jason Mashburn advisory consultation" className="hidden h-full w-full object-cover md:block" />
+            </div>
           </div>
         </div>
       </section>

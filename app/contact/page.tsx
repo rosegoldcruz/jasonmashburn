@@ -6,10 +6,11 @@ export default function ContactPage() {
     <main className="pt-28 text-foreground">
       <section className="container-shell py-14">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">Contact</p>
-        <h1 className="mt-3 text-4xl text-primary sm:text-5xl">Speak with Jason about your IUL strategy.</h1>
+        <h1 className="mt-3 text-4xl text-primary sm:text-5xl">Speak with Jason About Your Structured IUL Plan</h1>
         <p className="mt-5 max-w-3xl text-muted-foreground">
-          Use the form below to ask a specific question, request a consultation, or discuss whether Indexed Universal
-          Life is a fit for your retirement income and protection goals.
+          Use the form below to ask a focused question, request a consultation,
+          or evaluate whether a structured IUL design aligns with your
+          protection, tax-awareness, and retirement income objectives.
         </p>
       </section>
 

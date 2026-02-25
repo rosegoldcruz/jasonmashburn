@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea"
 import { applySchema, type ApplyFormValues } from "@/lib/validation"
 
-const steps = ["Personal Info", "Health Questions", "Coverage Goals", "Contact Preferences"]
+const steps = ["Personal Info", "Health Profile", "Strategy Inputs", "Contact Preferences"]
 
 export function ApplyForm() {
   const [currentStep, setCurrentStep] = useState(0)
@@ -84,10 +84,10 @@ export function ApplyForm() {
   if (submitted) {
     return (
       <div className="glass-panel rounded-2xl p-8">
-        <h2 className="text-3xl text-primary">Application Received</h2>
+        <h2 className="text-3xl text-primary">Illustration Request Received</h2>
         <p className="mt-4 text-muted-foreground">
-          Jason has your information and will review your goals and underwriting profile. Next step is a consultation
-          call to discuss assumptions, policy structure, and illustration options.
+          Jason has your information and will review your goals, underwriting profile, and timeline. The next step is
+          a structured consultation to discuss planning assumptions, policy design, and income modeling scenarios.
         </p>
       </div>
     )
@@ -192,7 +192,7 @@ export function ApplyForm() {
               ) : null}
             </div>
             <div>
-              <Label htmlFor="deathBenefitTarget">Death Benefit Target</Label>
+              <Label htmlFor="deathBenefitTarget">Protection Target (Death Benefit)</Label>
               <Input id="deathBenefitTarget" placeholder="$500,000" {...register("deathBenefitTarget")} />
               {errors.deathBenefitTarget ? (
                 <p className="mt-1 text-xs text-destructive">{errors.deathBenefitTarget.message}</p>
@@ -212,7 +212,7 @@ export function ApplyForm() {
                 <SelectContent>
                   <SelectItem value="retirement_income">Retirement Income</SelectItem>
                   <SelectItem value="legacy">Legacy Planning</SelectItem>
-                  <SelectItem value="living_benefits">Living Benefits</SelectItem>
+                  <SelectItem value="living_benefits">Protection + Living Benefits</SelectItem>
                 </SelectContent>
               </Select>
               {errors.primaryGoal ? <p className="mt-1 text-xs text-destructive">{errors.primaryGoal.message}</p> : null}
@@ -254,7 +254,7 @@ export function ApplyForm() {
             </Button>
           ) : (
             <Button type="submit" disabled={isSubmitting} className="bg-accent text-accent-foreground hover:bg-accent/90">
-              {isSubmitting ? "Submitting..." : "Submit Application"}
+              {isSubmitting ? "Submitting..." : "Request Custom Illustration"}
             </Button>
           )}
         </div>

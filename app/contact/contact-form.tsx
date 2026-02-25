@@ -41,12 +41,12 @@ export function ContactForm() {
     const data = (await response.json()) as { error?: string; message?: string }
 
     if (!response.ok) {
-      setServerError(data.error || "Unable to send message")
+      setServerError(data.error || "Unable to send request")
       return
     }
 
     window.dispatchEvent(new CustomEvent("stamp-impact", { detail: { label: "APPROVED" } }))
-    setSuccess(data.message || "Message sent")
+    setSuccess(data.message || "Request received. Jason will follow up shortly.")
     reset()
   }
 
@@ -77,7 +77,7 @@ export function ContactForm() {
       {success ? <p className="text-sm text-foreground">{success}</p> : null}
 
       <Button type="submit" disabled={isSubmitting} className="bg-accent text-accent-foreground hover:bg-accent/90">
-        {isSubmitting ? "Sending..." : "Send Message"}
+        {isSubmitting ? "Sending..." : "Request Consultation"}
       </Button>
     </form>
   )
