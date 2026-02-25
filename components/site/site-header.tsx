@@ -33,7 +33,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Button asChild className="h-10 rounded-full bg-accent px-5 text-accent-foreground hover:bg-accent/90">
-            <Link href="/apply">Get Free Illustration</Link>
+            <Link href="/apply" data-major-cta>Get Free Illustration</Link>
           </Button>
         </nav>
       </div>

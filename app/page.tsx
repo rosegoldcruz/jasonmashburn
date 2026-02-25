@@ -59,7 +59,7 @@ export default function Home() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
-                  <Link href="/how-it-works">See How IUL Works</Link>
+                  <Link href="/how-it-works" data-major-cta>See How IUL Works</Link>
                 </Button>
                 <Button
                   asChild
@@ -67,7 +67,7 @@ export default function Home() {
                   variant="outline"
                   className="h-11 rounded-full border-primary-foreground bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/10"
                 >
-                  <Link href="/apply">Apply Now</Link>
+                  <Link href="/apply" data-major-cta>Apply Now</Link>
                 </Button>
               </div>
             </motion.div>
@@ -247,7 +247,7 @@ export default function Home() {
               target, retirement horizon, and protection priorities.
             </p>
             <Button asChild className="mt-7 h-11 bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link href="/apply">Start Your Illustration Request</Link>
+              <Link href="/apply" data-major-cta>Start Your Illustration Request</Link>
             </Button>
           </div>
         </div>

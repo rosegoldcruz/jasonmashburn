@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site/site-footer"
 import { SiteHeader } from "@/components/site/site-header"
 import { ChatWidget } from "@/components/site/chat-widget"
 import { MobileFloatingCta } from "@/components/site/mobile-floating-cta"
+import { StampImpactOverlay } from "@/components/site/stamp-impact-overlay"
 import "./globals.css"
 
 const inter = Inter({
@@ -39,6 +40,7 @@ export default function RootLayout({
           <SiteFooter />
           <MobileFloatingCta />
           <ChatWidget />
+          <StampImpactOverlay />
           <Analytics />
         </LenisProvider>
       </body>

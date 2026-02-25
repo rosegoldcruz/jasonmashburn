@@ -144,7 +144,7 @@ export default function HowItWorksPage() {
               your retirement income and protection objectives.
             </p>
             <Button asChild className="mt-6 bg-accent text-accent-foreground hover:bg-accent/90">
-              <Link href="/apply">Continue to Application</Link>
+              <Link href="/apply" data-major-cta>Continue to Application</Link>
             </Button>
           </div>
         </div>

@@ -77,6 +77,7 @@ export function ApplyForm() {
       return
     }
 
+    window.dispatchEvent(new CustomEvent("stamp-impact", { detail: { label: "APPROVED" } }))
     setSubmitted(true)
   }
 

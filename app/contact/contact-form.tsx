@@ -45,6 +45,7 @@ export function ContactForm() {
       return
     }
 
+    window.dispatchEvent(new CustomEvent("stamp-impact", { detail: { label: "APPROVED" } }))
     setSuccess(data.message || "Message sent")
     reset()
   }
