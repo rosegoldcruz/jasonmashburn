@@ -83,7 +83,7 @@ export function ApplyForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-xl border bg-card p-8">
+      <div className="glass-panel rounded-2xl p-8">
         <h2 className="text-3xl text-primary">Application Received</h2>
         <p className="mt-4 text-muted-foreground">
           Jason has your information and will review your goals and underwriting profile. Next step is a consultation
@@ -94,7 +94,7 @@ export function ApplyForm() {
   }
 
   return (
-    <div className="rounded-2xl border bg-card p-6 sm:p-8">
+    <div className="glass-panel rounded-2xl p-6 sm:p-8">
       <div className="mb-6">
         <div className="mb-2 flex items-center justify-between text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
           <span>Step {currentStep + 1} of 4</span>

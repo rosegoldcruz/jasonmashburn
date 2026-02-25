@@ -23,7 +23,7 @@ export default function Home() {
   }
 
   return (
-    <main className="bg-background pt-20">
+    <main className="pt-20 text-foreground">
       <section className="relative isolate overflow-hidden border-b border-white/10">
         <HeroParallaxLayers />
         <video
@@ -43,7 +43,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65 * profile.motionDurationScale }}
-              className="max-w-3xl rounded-3xl border border-white/20 bg-primary/38 p-7 shadow-2xl backdrop-blur-md sm:p-11"
+              className="glass-panel-strong max-w-3xl rounded-3xl p-7 sm:p-11"
             >
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">
                 Arizona Indexed Universal Life Planning
@@ -76,7 +76,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.78 * profile.motionDurationScale, delay: 0.12 }}
-              className="hidden rounded-3xl border border-white/15 bg-white/6 p-7 text-primary-foreground shadow-[0_34px_90px_-55px_rgba(0,0,0,0.85)] backdrop-blur-md lg:block"
+              className="glass-panel hidden rounded-3xl p-7 text-primary-foreground lg:block"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Strategic Outcome</p>
               <h2 className="mt-3 text-3xl leading-tight">Preserve downside. Build optionality.</h2>
@@ -99,7 +99,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-secondary/45 py-24">
+      <section className="relative overflow-hidden py-24">
         <div className="container-shell">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Core Value</p>
           <h2 className="mt-3 text-3xl text-primary sm:text-5xl">What Is an IUL?</h2>
@@ -121,7 +121,7 @@ export default function Home() {
             <motion.article
               key={item.title}
               {...cardAnimation}
-              className="group rounded-2xl border border-border/70 bg-card/95 p-7 shadow-[0_18px_45px_-24px_rgba(10,22,40,0.55)] transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-[0_22px_55px_-22px_rgba(10,22,40,0.45)]"
+              className="glass-panel group rounded-2xl p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40"
             >
               <div className="mb-4 h-[2px] w-12 rounded-full bg-accent/80" />
               <h3 className="text-[1.65rem] leading-tight text-primary">{item.title}</h3>
@@ -132,7 +132,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-primary py-24 text-primary-foreground">
+      <section className="py-24 text-primary-foreground">
         <div className="container-shell">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Ideal Client Profile</p>
           <h2 className="mt-3 text-3xl sm:text-5xl">Who This Is For</h2>
@@ -145,7 +145,7 @@ export default function Home() {
               <motion.div
                 key={item}
                 {...cardAnimation}
-                className="rounded-2xl border border-white/15 bg-white/7 p-7 shadow-[0_20px_55px_-35px_rgba(0,0,0,0.7)] backdrop-blur-sm"
+                className="glass-panel rounded-2xl p-7"
               >
                 <div className="mb-4 h-[2px] w-10 rounded-full bg-accent/85" />
                 <p className="text-sm leading-relaxed text-primary-foreground/90">{item}</p>
@@ -168,7 +168,7 @@ export default function Home() {
             <motion.div
               key={t}
               {...cardAnimation}
-              className="rounded-2xl border border-border bg-card p-7 shadow-[0_16px_38px_-28px_rgba(10,22,40,0.5)]"
+              className="glass-panel rounded-2xl p-7"
             >
               <p className="text-sm font-semibold tracking-wide text-accent">{n}</p>
               <h3 className="mt-2 text-[1.6rem] leading-tight text-primary">{t}</h3>
@@ -181,7 +181,7 @@ export default function Home() {
 
       <section className="py-24">
         <div className="container-shell">
-          <div className="rounded-3xl bg-gradient-to-r from-primary to-[#102746] px-8 py-14 text-primary-foreground shadow-2xl sm:px-14">
+          <div className="glass-panel-strong rounded-3xl px-8 py-14 text-primary-foreground sm:px-14">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Advisor Positioning</p>
             <h2 className="mt-3 text-3xl sm:text-5xl">Why Jason Mashburn</h2>
             <p className="mt-5 max-w-4xl text-primary-foreground/90">
@@ -194,14 +194,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative bg-gradient-to-b from-transparent to-secondary/45 py-24">
+      <section className="relative py-24">
         <div className="container-shell">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Clarity</p>
           <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Frequently Asked Questions</h2>
           <Accordion
             type="single"
             collapsible
-            className="mt-8 rounded-2xl border border-border bg-card px-7 shadow-[0_20px_52px_-34px_rgba(10,22,40,0.45)]"
+            className="glass-panel mt-8 rounded-2xl px-7"
           >
           <AccordionItem value="q1">
             <AccordionTrigger>How is IUL different from a Roth IRA?</AccordionTrigger>
@@ -240,9 +240,9 @@ export default function Home() {
 
       <section className="pb-28">
         <div className="container-shell">
-          <div className="rounded-3xl bg-gradient-to-r from-accent to-[#b5912f] px-8 py-12 text-accent-foreground shadow-[0_24px_60px_-32px_rgba(201,168,76,0.8)] sm:px-12">
+          <div className="glass-panel-strong rounded-3xl px-8 py-12 text-primary-foreground sm:px-12">
             <h2 className="text-3xl sm:text-4xl">Get Your Custom IUL Illustration — Free</h2>
-            <p className="mt-4 max-w-2xl text-sm text-accent-foreground/90">
+            <p className="mt-4 max-w-2xl text-sm text-primary-foreground/88">
               Get a personalized illustration designed around your contribution
               target, retirement horizon, and protection priorities.
             </p>

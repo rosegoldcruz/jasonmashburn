@@ -14,7 +14,7 @@ const growthPoints = [
 
 export default function HowItWorksPage() {
   return (
-    <main className="bg-background pt-28">
+    <main className="pt-28 text-foreground">
       <section className="container-shell py-16">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
           IUL Education
@@ -31,9 +31,9 @@ export default function HowItWorksPage() {
         </p>
       </section>
 
-      <section className="bg-secondary py-16">
+      <section className="py-16">
         <div className="container-shell grid gap-8 lg:grid-cols-2">
-          <article className="rounded-xl bg-card p-7">
+          <article className="glass-panel rounded-2xl p-7">
             <h2 className="text-3xl text-primary">Core Mechanics</h2>
             <ul className="mt-5 space-y-4 text-sm text-muted-foreground">
               <li>
@@ -59,14 +59,14 @@ export default function HowItWorksPage() {
             </ul>
           </article>
 
-          <article className="rounded-xl border border-border bg-background p-7">
+          <article className="glass-panel rounded-2xl p-7">
             <h2 className="text-3xl text-primary">Animated Growth Concept</h2>
             <p className="mt-3 text-sm text-muted-foreground">
               This conceptual chart shows how structured funding and indexed
               crediting can compound over time while maintaining policy-level
               risk controls.
             </p>
-            <div className="mt-6 rounded-lg border bg-card p-5">
+            <div className="glass-panel mt-6 rounded-xl p-5">
               <div className="space-y-3">
                 {growthPoints.map((point, idx) => (
                   <div key={point.year} className="grid grid-cols-[60px_1fr] items-center gap-3">
@@ -90,9 +90,9 @@ export default function HowItWorksPage() {
 
       <section className="container-shell py-16">
         <h2 className="text-3xl text-primary">IUL vs Other Strategies</h2>
-        <div className="mt-6 overflow-x-auto rounded-xl border bg-card">
+        <div className="glass-panel mt-6 overflow-x-auto rounded-2xl">
           <table className="w-full min-w-[760px] text-left text-sm">
-            <thead className="bg-secondary text-foreground">
+            <thead className="bg-white/10 text-foreground">
               <tr>
                 <th className="px-5 py-4">Strategy</th>
                 <th className="px-5 py-4">Market Downside</th>
@@ -137,7 +137,7 @@ export default function HowItWorksPage() {
 
       <section className="pb-20">
         <div className="container-shell">
-          <div className="rounded-2xl bg-primary px-7 py-10 text-primary-foreground sm:px-10">
+          <div className="glass-panel-strong rounded-3xl px-7 py-10 text-primary-foreground sm:px-10">
             <h2 className="text-3xl">Ready to evaluate your custom IUL design?</h2>
             <p className="mt-3 max-w-2xl text-primary-foreground/85">
               Submit your details and receive a tailored illustration aligned to

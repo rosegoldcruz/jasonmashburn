@@ -3,7 +3,7 @@ import { ApplyForm } from "./apply-form"
 
 export default function ApplyPage() {
   return (
-    <main className="bg-background pt-28">
+    <main className="pt-28 text-foreground">
       <section className="container-shell py-14">
         <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
           Application
@@ -22,7 +22,7 @@ export default function ApplyPage() {
       </section>
 
       <section className="container-shell pb-20">
-        <div className="rounded-xl border bg-card p-6">
+        <div className="glass-panel rounded-2xl p-6">
           <p className="text-xs leading-relaxed text-muted-foreground">{COMPLIANCE_COPY}</p>
         </div>
       </section>
