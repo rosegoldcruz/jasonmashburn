@@ -13,11 +13,11 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-primary/95 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-gradient-to-r from-primary/94 via-[#0f2541]/93 to-primary/94 shadow-[0_14px_32px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
       <div className="container-shell flex h-20 items-center justify-between">
-        <Link href="/" className="text-lg font-semibold text-primary-foreground">
+        <Link href="/" className="text-lg font-semibold text-primary-foreground sm:text-xl">
           Jason Mashburn
-          <span className="ml-2 text-xs font-normal uppercase tracking-[0.18em] text-accent">
+          <span className="ml-2 text-[10px] font-medium uppercase tracking-[0.2em] text-accent sm:text-xs">
             IUL Advisor
           </span>
         </Link>
@@ -27,16 +27,17 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-primary-foreground/90 hover:text-accent"
+              className="text-sm font-medium text-primary-foreground/85 hover:text-accent"
             >
               {item.label}
             </Link>
           ))}
-          <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild className="h-10 rounded-full bg-accent px-5 text-accent-foreground hover:bg-accent/90">
             <Link href="/apply">Get Free Illustration</Link>
           </Button>
         </nav>
       </div>
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
       <MobileGestureNav />
     </header>
   )
