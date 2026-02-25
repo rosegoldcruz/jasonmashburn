@@ -7,6 +7,7 @@ import { MobileGestureNav } from "@/components/site/mobile-gesture-nav"
 const navItems = [
   { label: "Home", href: "/" },
   { label: "How It Works", href: "/how-it-works" },
+  { label: "Calculator", href: "/#calculator" },
   { label: "Apply", href: "/apply" },
   { label: "Contact", href: "/contact" },
 ]

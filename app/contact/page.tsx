@@ -1,4 +1,5 @@
 import { ContactForm } from "./contact-form"
+import { CalendlyWidget } from "@/components/site/calendly-widget"
 import { COMPLIANCE_COPY, SITE } from "@/lib/site-config"
 
 export default function ContactPage() {
@@ -36,6 +37,19 @@ export default function ContactPage() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="container-shell pb-16">
+        <div className="glass-panel rounded-2xl p-6">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Schedule</p>
+          <h2 className="mt-3 text-3xl text-primary">Book a Retirement Review Call</h2>
+          <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
+            Select a time that works for you. Jason will review your current
+            situation and discuss whether a structured IUL strategy may align
+            with your retirement objectives.
+          </p>
+          <CalendlyWidget className="mt-6" />
         </div>
       </section>
 

@@ -13,6 +13,9 @@ import {
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
 import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
+import { TrustBadges } from "@/components/site/trust-badges"
+import { Testimonials } from "@/components/site/testimonials"
+import { IulCalculator } from "@/components/site/iul-calculator"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 export default function Home() {
@@ -103,6 +106,8 @@ export default function Home() {
           </motion.div>
         </div>
       </section>
+
+      <TrustBadges />
 
       <section className="py-24">
         <div className="container-shell">
@@ -263,6 +268,8 @@ export default function Home() {
         </div>
       </section>
 
+      <Testimonials />
+
       <section className="py-24">
         <div className="container-shell">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Implementation</p>
@@ -296,6 +303,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <IulCalculator />
 
       <section className="py-24">
         <div className="container-shell grid gap-6 lg:grid-cols-[1fr_1.55fr]">

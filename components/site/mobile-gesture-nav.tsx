@@ -3,7 +3,7 @@
 import Link from "next/link"
 import type React from "react"
 import { useEffect, useMemo, useRef, useState } from "react"
-import { Home, Sparkles, FileText, Phone, Compass, X } from "lucide-react"
+import { Home, Sparkles, FileText, Phone, Compass, X, Calculator } from "lucide-react"
 import gsap from "gsap"
 import { Draggable } from "gsap/Draggable"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
@@ -19,6 +19,7 @@ type NavItem = {
 const navItems: NavItem[] = [
   { label: "Home", href: "/", icon: Home },
   { label: "How It Works", href: "/how-it-works", icon: Sparkles },
+  { label: "Calculator", href: "/#calculator", icon: Calculator },
   { label: "Apply", href: "/apply", icon: FileText },
   { label: "Contact", href: "/contact", icon: Phone },
 ]
