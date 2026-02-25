@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 export default function Home() {
@@ -61,8 +62,10 @@ export default function Home() {
   return (
     <main className="pt-20 text-foreground">
       <section ref={heroRef} className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden">
-        <img src="/azluxury.png" alt="Arizona luxury homes" className="absolute inset-0 h-full w-full object-cover md:hidden" />
-        <img src="/1.jpg" alt="Scottsdale luxury home" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        <HeroParallaxLayers />
+        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
+          <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-primary/18" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/62 via-primary/22 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-primary/58 to-transparent" />
@@ -74,18 +77,18 @@ export default function Home() {
             transition={{ duration: 0.65 * profile.motionDurationScale }}
             className="max-w-4xl"
           >
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Arizona IUL Planning Specialist</p>
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">Arizona Indexed Universal Life Planning</p>
             <h1 className="text-4xl leading-[1.02] text-primary-foreground [text-shadow:0_6px_24px_rgba(0,0,0,0.5)] sm:text-6xl">
-              Build Tax-Efficient Retirement Income with Structured IUL Strategies
+              Build tax-free retirement income with IUL strategies designed to protect principal and preserve flexibility.
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-primary-foreground/95 [text-shadow:0_3px_16px_rgba(0,0,0,0.35)] sm:text-lg">
-              Protect what you have built while creating clearer income pathways for retirement. Every recommendation is structured
-              around protection, tax awareness, and long-term income alignment.
+              Jason Mashburn helps Arizona families and high-income professionals use Indexed Universal Life for downside protection,
+              tax-advantaged growth potential, and access to living benefits.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
-                <Link href="/apply" data-major-cta>Request Custom Illustration</Link>
+                <Link href="/how-it-works" data-major-cta>See How IUL Works</Link>
               </Button>
               <Button
                 asChild
@@ -93,7 +96,7 @@ export default function Home() {
                 variant="outline"
                 className="h-11 rounded-full border-primary-foreground bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/12"
               >
-                <Link href="/how-it-works" data-major-cta>See Planning Framework</Link>
+                <Link href="/apply" data-major-cta>Apply Now</Link>
               </Button>
             </div>
 
