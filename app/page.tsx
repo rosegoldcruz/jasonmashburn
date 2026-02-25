@@ -29,8 +29,8 @@ export default function Home() {
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
           <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-primary/70" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-primary/85" />
+        <div className="absolute inset-0 bg-primary/34" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/48 via-primary/14 to-transparent" />
 
         <div className="container-shell relative z-10 py-28 sm:py-40">
           <div className="grid items-end gap-8 lg:grid-cols-[1.08fr_0.74fr]">
@@ -38,7 +38,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65 * profile.motionDurationScale }}
-              className="glass-panel-strong rounded-3xl p-8 sm:p-12"
+              className="rounded-3xl border border-white/24 bg-primary/18 p-8 shadow-[0_22px_65px_-40px_rgba(4,10,20,0.9)] backdrop-blur-[5px] sm:p-12"
             >
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.2em] text-accent">Arizona Indexed Universal Life Planning</p>
               <h1 className="text-4xl leading-[1.01] text-primary-foreground sm:text-6xl">
@@ -67,7 +67,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.78 * profile.motionDurationScale, delay: 0.12 }}
-              className="glass-panel hidden rounded-3xl p-8 text-primary-foreground lg:block"
+              className="hidden rounded-3xl border border-white/18 bg-primary/14 p-8 text-primary-foreground shadow-[0_20px_55px_-40px_rgba(4,10,20,0.85)] backdrop-blur-[4px] lg:block"
             >
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Capital Preservation Blueprint</p>
               <h2 className="mt-3 text-3xl leading-tight">Secure the floor. Engineer upside.</h2>
