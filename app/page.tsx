@@ -1,7 +1,10 @@
 "use client"
 
 import Link from "next/link"
+import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import {
   Accordion,
   AccordionContent,
@@ -14,6 +17,40 @@ import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 export default function Home() {
   const profile = useAdaptiveMotion()
+  const heroRef = useRef<HTMLElement | null>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const heroElement = heroRef.current
+    if (!heroElement) {
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      gsap.set(heroElement, {
+        transformOrigin: "center center",
+        scale: 1,
+        borderRadius: 0,
+      })
+
+      gsap.to(heroElement, {
+        scale: 0.6,
+        borderRadius: 24,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroElement,
+          start: "top top",
+          end: "+=800",
+          pin: true,
+          scrub: 1.5,
+          anticipatePin: 1,
+        },
+      })
+    }, heroElement)
+
+    return () => ctx.revert()
+  }, [])
 
   const cardAnimation = {
     initial: { opacity: 0, y: 26 },
@@ -24,7 +61,7 @@ export default function Home() {
 
   return (
     <main className="pt-20 text-foreground">
-      <section className="relative isolate overflow-hidden border-b border-white/10">
+      <section ref={heroRef} className="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden">
         <HeroParallaxLayers />
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
           <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
@@ -63,20 +100,6 @@ export default function Home() {
               </Button>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-3">
-              {[
-                "Arizona Licensed",
-                "Products through Bankers Life",
-                "IUL-Focused Retirement Strategy",
-              ].map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/25 bg-white/8 px-4 py-2 text-xs font-medium uppercase tracking-[0.14em] text-primary-foreground/92 backdrop-blur-sm"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

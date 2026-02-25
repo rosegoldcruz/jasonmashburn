@@ -13,7 +13,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-gradient-to-r from-primary/94 via-[#0f2541]/93 to-primary/94 shadow-[0_14px_32px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-primary/94 via-[#0f2541]/93 to-primary/94 shadow-[0_14px_32px_-20px_rgba(0,0,0,0.7)] backdrop-blur-xl">
       <div className="container-shell flex h-20 items-center justify-between">
         <Link href="/" className="text-lg font-semibold text-primary-foreground sm:text-xl">
           Jason Mashburn
@@ -37,7 +37,6 @@ export function SiteHeader() {
           </Button>
         </nav>
       </div>
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
       <MobileGestureNav />
     </header>
   )
