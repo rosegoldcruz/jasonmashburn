@@ -6,7 +6,6 @@ import { LenisProvider } from "@/components/lenis-provider"
 import { SiteFooter } from "@/components/site/site-footer"
 import { SiteHeader } from "@/components/site/site-header"
 import { ChatWidget } from "@/components/site/chat-widget"
-import { MobileFloatingCta } from "@/components/site/mobile-floating-cta"
 import { StampImpactOverlay } from "@/components/site/stamp-impact-overlay"
 import { LeadCaptureModal } from "@/components/site/lead-capture-modal"
 import "./globals.css"
@@ -106,7 +105,6 @@ export default function RootLayout({
           <SiteHeader />
           {children}
           <SiteFooter />
-          <MobileFloatingCta />
           <ChatWidget />
           <StampImpactOverlay />
           <LeadCaptureModal />
