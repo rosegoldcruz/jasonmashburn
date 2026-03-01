@@ -291,6 +291,69 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="py-24 bg-primary/5">
+        <div className="container-shell">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Product Capabilities</p>
+          <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Solutions Available Through Bankers Life</h2>
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Protection Foundation",
+                subtitle: "Life Insurance Solutions",
+                items: [
+                  "Term Life Insurance",
+                  "Whole Life Insurance",
+                  "Universal Life Insurance",
+                  "Juvenile Whole Life",
+                ],
+                copy: "Permanent and term-based structures designed for income replacement, estate planning, and long-term accumulation objectives.",
+              },
+              {
+                title: "Retirement Income Design",
+                subtitle: "Annuity Strategies",
+                items: [
+                  "Fixed Indexed Annuities",
+                  "Bonus / Flexible Premium Indexed",
+                  "Guaranteed Lifetime Income Riders",
+                ],
+                copy: "Principal-protected accumulation and income structures designed to support defined retirement cash flow objectives.",
+              },
+              {
+                title: "Healthcare Cost Mitigation",
+                subtitle: "Coverage Solutions",
+                items: [
+                  "Medicare Supplement (Medigap)",
+                  "Long-Term Care Insurance",
+                  "Hospital Indemnity",
+                  "Critical Illness",
+                ],
+                copy: "Coverage solutions structured to manage healthcare cost exposure and protect retirement assets from medical erosion.",
+              },
+            ].map((pillar) => (
+              <motion.article key={pillar.title} {...cardAnimation} className="glass-panel rounded-2xl p-8 flex flex-col h-full">
+                <div className="mb-6 h-[2px] w-12 rounded-full bg-accent/80" />
+                <h3 className="text-2xl leading-tight text-primary">{pillar.title}</h3>
+                <p className="mt-1 text-sm font-medium text-accent">{pillar.subtitle}</p>
+                
+                <ul className="mt-6 mb-8 space-y-3 text-sm text-foreground/90">
+                  {pillar.items.map((item) => (
+                    <li key={item} className="flex gap-3 items-start">
+                      <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent/80" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <p className="mt-auto text-sm leading-relaxed text-muted-foreground border-t border-[rgb(255_255_255/0.1)] pt-6">
+                  {pillar.copy}
+                </p>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="container-shell">
           <div className="glass-panel-strong rounded-3xl px-8 py-14 text-primary-foreground sm:px-14">

@@ -1,41 +1,30 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, Award, MapPin, Building2 } from "lucide-react"
+import { Shield, Award, MapPin, Briefcase } from "lucide-react"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
 const credentials = [
   {
-    icon: Shield,
-    label: "Fiduciary-Minded",
-    detail: "Client-first planning process",
-  },
-  {
     icon: Award,
-    label: "Licensed Insurance Agent",
+    label: "Licensed",
     detail: "State of Arizona",
-  },
-  {
-    icon: Building2,
-    label: "30+ Carriers",
-    detail: "Access to top-rated insurers",
   },
   {
     icon: MapPin,
     label: "Arizona-Based",
     detail: "Scottsdale · PV · North Scottsdale",
   },
-]
-
-const carrierNames = [
-  "Nationwide",
-  "Pacific Life",
-  "North American",
-  "Allianz",
-  "Lincoln Financial",
-  "Securian",
-  "Transamerica",
-  "John Hancock",
+  {
+    icon: Briefcase,
+    label: "Bankers Life",
+    detail: "Advisory & Insurance Solutions",
+  },
+  {
+    icon: Shield,
+    label: "Specialist",
+    detail: "Medicare & Retirement Planning",
+  },
 ]
 
 export function TrustBadges() {
@@ -67,28 +56,6 @@ export function TrustBadges() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 * profile.motionDurationScale, delay: 0.3 }}
-          className="mt-10 text-center"
-        >
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
-            Partnered With Leading Carriers
-          </p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {carrierNames.map((name) => (
-              <span
-                key={name}
-                className="text-sm font-medium tracking-wide text-muted-foreground/70 transition-colors hover:text-accent"
-              >
-                {name}
-              </span>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   )
