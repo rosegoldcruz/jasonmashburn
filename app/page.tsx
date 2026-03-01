@@ -199,6 +199,9 @@ export default function Home() {
   return (
     <main className="bg-[radial-gradient(circle_at_10%_10%,rgba(26,42,67,0.7),transparent_40%),radial-gradient(circle_at_85%_20%,rgba(197,163,94,0.13),transparent_36%),linear-gradient(180deg,#060b14_0%,#091325_42%,#07101d_100%)] pt-20 text-[#e5ecf8]">
       <section className="relative isolate overflow-hidden border-b border-white/10">
+        <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
+          <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 opacity-40">
           <div className="absolute left-[-10rem] top-[-7rem] h-80 w-80 rounded-full bg-[#8da8ce]/20 blur-3xl" />
           <div className="absolute right-[-7rem] top-[10rem] h-72 w-72 rounded-full bg-[#d5b57c]/14 blur-3xl" />
