@@ -3,12 +3,15 @@
 import Link from "next/link"
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react"
 import { animate, motion, useInView, useMotionValue, useTransform } from "framer-motion"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Progress } from "@/components/ui/progress"
 import { Slider } from "@/components/ui/slider"
+import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
 import { TrustBadges } from "@/components/site/trust-badges"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 
@@ -123,6 +126,7 @@ function DecisionGateCard({ item }: { item: DecisionProfile }) {
 
 export default function Home() {
   const profile = useAdaptiveMotion()
+  const heroRef = useRef<HTMLElement | null>(null)
   const [incomeMode, setIncomeMode] = useState<"market" | "structured">("structured")
   const [retirementBalance, setRetirementBalance] = useState(950000)
   const [yearsToRetirement, setYearsToRetirement] = useState(8)
@@ -196,9 +200,43 @@ export default function Home() {
     },
   ]
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+
+    const heroElement = heroRef.current
+    if (!heroElement) {
+      return
+    }
+
+    const ctx = gsap.context(() => {
+      gsap.set(heroElement, {
+        transformOrigin: "center center",
+        scale: 1,
+        borderRadius: 0,
+      })
+
+      gsap.to(heroElement, {
+        scale: 0.6,
+        borderRadius: 24,
+        ease: "none",
+        scrollTrigger: {
+          trigger: heroElement,
+          start: "top top",
+          end: "+=800",
+          pin: true,
+          scrub: 1.5,
+          anticipatePin: 1,
+        },
+      })
+    }, heroElement)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
     <main className="bg-[radial-gradient(circle_at_10%_10%,rgba(26,42,67,0.7),transparent_40%),radial-gradient(circle_at_85%_20%,rgba(197,163,94,0.13),transparent_36%),linear-gradient(180deg,#060b14_0%,#091325_42%,#07101d_100%)] pt-20 text-[#e5ecf8]">
-      <section className="relative isolate overflow-hidden border-b border-white/10">
+      <section ref={heroRef} className="relative isolate overflow-hidden border-b border-white/10">
+        <HeroParallaxLayers />
         <video autoPlay loop muted playsInline className="absolute inset-0 h-full w-full object-cover">
           <source src="/seven-desert-mountain-header.mp4" type="video/mp4" />
         </video>
