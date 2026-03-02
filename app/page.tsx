@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { ShieldCheck, TrendingUp, Clock, Users, Briefcase, Heart } from "lucide-react"
+import { Briefcase, TrendingUp, ShieldCheck, ArrowRight, Search, Wrench, BarChart3 } from "lucide-react"
 import {
   Accordion,
   AccordionContent,
@@ -15,7 +15,9 @@ import {
 import { Button } from "@/components/ui/button"
 import { HeroParallaxLayers } from "@/components/site/hero-parallax-layers"
 import { StickyCtaDock } from "@/components/site/sticky-cta-dock"
-import { IulCalculator } from "@/components/site/iul-calculator"
+import { RetirementRiskDashboard } from "@/components/site/retirement-risk-dashboard"
+import { IncomeModelVisualization } from "@/components/site/income-model-visualization"
+import { RetirementStressTest } from "@/components/site/retirement-stress-test"
 import { useAdaptiveMotion } from "@/hooks/use-adaptive-motion"
 import {
   duration,
@@ -76,7 +78,7 @@ export default function Home() {
   return (
     <main className="pt-20 text-foreground">
       {/* ═══════════════════════════════════════════════════════════
-          LAYER 1 — IDENTITY SNAP (Hero)
+          SECTION 1 — HERO (Problem-Led)
           Asset A: seven-desert-mountain-header.mp4 — LOCKED
           ═══════════════════════════════════════════════════════════ */}
       <section
@@ -107,7 +109,7 @@ export default function Home() {
           }}
         />
 
-        <div className="container-shell relative z-10 py-28 sm:py-44">
+        <div className="container-shell relative z-10 flex min-h-[calc(100vh-5rem)] flex-col justify-center py-20 sm:py-28">
           <motion.div
             initial={heroReveal.initial}
             animate={heroReveal.animate}
@@ -120,97 +122,73 @@ export default function Home() {
             <p className="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-accent">
               Arizona Retirement Income Specialist
             </p>
-            <h1 className="text-4xl leading-[1.02] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.6),0_6px_24px_rgba(0,0,0,0.4)] sm:text-6xl">
-              Build tax-free retirement income with IUL strategies designed to protect principal and preserve flexibility.
+            <h1 className="text-3xl leading-[1.08] text-white [text-shadow:0_2px_8px_rgba(0,0,0,0.6),0_6px_24px_rgba(0,0,0,0.4)] sm:text-5xl lg:text-6xl">
+              Are You 5–10 Years From Retirement and Unsure How Your Income Will Actually Work?
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90 [text-shadow:0_2px_12px_rgba(0,0,0,0.4)] sm:text-lg">
-              Jason Mashburn helps Arizona families and high-income professionals use Indexed Universal Life for downside protection,
-              tax-advantaged growth potential, and access to living benefits.
+              Jason Mashburn designs protection-first retirement income structures for Arizona business owners
+              and pre-retirees who want defined income, not market guesswork.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="h-11 rounded-full bg-accent px-6 text-accent-foreground hover:bg-accent/90">
-                <Link href="/apply" data-major-cta>Run Retirement Income Stress Test</Link>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button asChild size="lg" className="h-12 rounded-full bg-accent px-7 text-sm font-semibold text-accent-foreground hover:bg-accent/90">
+                <Link href="#stress-test" data-major-cta>
+                  Run Your Retirement Income Stress Test
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
               </Button>
+              <Link
+                href="/how-it-works"
+                className="text-sm font-medium text-white/70 underline decoration-white/20 underline-offset-4 transition-colors hover:text-white hover:decoration-white/40"
+              >
+                See How Structured Income Planning Works
+              </Link>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          LAYER 2 — AUTHORITY COMPRESSION (KPI Dashboard)
+          SECTION 2 — RETIREMENT RISK DASHBOARD
+          Institutional animated metrics panel
           ═══════════════════════════════════════════════════════════ */}
-      <section className="py-16">
-        <div className="container-shell">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: ShieldCheck, stat: "0% Floor", label: "Downside protection built into indexed strategies" },
-              { icon: TrendingUp, stat: "Tax-Free", label: "Policy loan access designed for tax-advantaged income" },
-              { icon: Clock, stat: "Lifetime", label: "Income modeling for distributions that don't expire" },
-              { icon: Users, stat: "Arizona", label: "Licensed · Scottsdale-based · In-person & virtual" },
-            ].map((kpi, idx) => (
-              <motion.div
-                key={kpi.label}
-                initial={sectionReveal.initial}
-                whileInView={sectionReveal.whileInView}
-                viewport={sectionReveal.viewport}
-                transition={{
-                  duration: duration.base * profile.motionDurationScale,
-                  delay: idx * stagger.children,
-                  ease: easing.easeOut,
-                }}
-                className="glass-panel flex items-start gap-4 rounded-2xl p-5"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/15">
-                  <kpi.icon className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <p className="text-lg font-semibold text-foreground">{kpi.stat}</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">{kpi.label}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <RetirementRiskDashboard />
 
       {/* ═══════════════════════════════════════════════════════════
-          LAYER 3 — DECISION GATE ("Who This Is For")
-          Three persona cards — categorization reduces anxiety
+          SECTION 3 — WHO THIS IS FOR (Decision Gate)
+          3 selectable persona cards with scroll anchors
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-24" id="who-this-is-for">
         <div className="container-shell">
           <motion.div {...cardAnimation}>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Who This Is For</p>
-            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Select the scenario that fits you.</h2>
-            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-              Each path leads to the same structured review process — but understanding your starting point helps Jason design a more relevant strategy from day one.
-            </p>
+            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Which describes your situation?</h2>
           </motion.div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
                 icon: Briefcase,
-                title: "Business Owner Rollover",
-                copy: "You've built equity in your business and need to transition accumulated assets into protected retirement income without unnecessary tax exposure.",
-                image: "/Business%20owner%20rollover.jpeg",
+                title: "Business Owner With 401(k)",
+                copy: "You've built significant 401(k) or qualified plan assets and need a structured exit strategy that protects principal and creates tax-efficient retirement income.",
+                anchor: "#stress-test",
               },
               {
                 icon: TrendingUp,
-                title: "Pre-Retiree Restructuring",
-                copy: "You're 5–15 years from retirement and want to rebalance market exposure toward principal-protected accumulation with a defined income date.",
-                image: "/pre-retiree.jpeg",
+                title: "Pre-Retiree 5–10 Years Out",
+                copy: "You're approaching retirement and need to shift from accumulation to income architecture — with downside protection and a defined withdrawal strategy.",
+                anchor: "#stress-test",
               },
               {
-                icon: Heart,
-                title: "Surviving Spouse / Income Stabilization",
-                copy: "You need to restructure household cash flow for steadier income, protection continuity, and clearer long-term planning decisions.",
-                image: "/widow.jpeg",
+                icon: ShieldCheck,
+                title: "Retiree Concerned About Income Stability",
+                copy: "You're already retired or about to be and worried that market volatility, inflation, or longevity could erode your income and lifestyle.",
+                anchor: "#stress-test",
               },
             ].map((persona, idx) => (
-              <motion.article
+              <motion.a
                 key={persona.title}
+                href={persona.anchor}
                 initial={sectionReveal.initial}
                 whileInView={sectionReveal.whileInView}
                 viewport={sectionReveal.viewport}
@@ -219,49 +197,42 @@ export default function Home() {
                   delay: idx * stagger.children,
                   ease: easing.easeOut,
                 }}
-                whileHover={cardHover.whileHover}
-                className="glass-panel group flex flex-col overflow-hidden rounded-2xl"
+                whileHover={{ y: -distance.lift, scale: scale.hover }}
+                className="glass-panel group flex cursor-pointer flex-col rounded-2xl p-8 transition-colors hover:bg-white/[0.08]"
               >
-                <div className="relative h-52 overflow-hidden">
-                  <img
-                    src={persona.image}
-                    alt={persona.title}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgb(8_19_36/0.60)] to-transparent" />
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-accent/12">
+                  <persona.icon className="h-6 w-6 text-accent" />
                 </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-accent/15">
-                    <persona.icon className="h-5 w-5 text-accent" />
-                  </div>
-                  <h3 className="text-2xl leading-tight text-primary">{persona.title}</h3>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{persona.copy}</p>
-                  <Link
-                    href="/apply"
-                    className="mt-5 inline-flex text-sm font-medium text-accent transition-colors hover:text-accent/80"
-                  >
-                    Start Structured Review →
-                  </Link>
+                <h3 className="text-2xl leading-tight text-primary">{persona.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{persona.copy}</p>
+                <div className="mt-5 flex items-center gap-2 text-sm font-medium text-accent opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  Take the Stress Test
+                  <ArrowRight className="h-4 w-4" />
                 </div>
-              </motion.article>
+              </motion.a>
             ))}
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          LAYER 4 — MODELING PROOF
+          SECTION 4 — INCOME MODEL VISUALIZATION
+          Layered bar chart with Market-Only vs Structured toggle
+          ═══════════════════════════════════════════════════════════ */}
+      <IncomeModelVisualization />
+
+      {/* ═══════════════════════════════════════════════════════════
+          MODELING PROOF — Advisor Credibility
           Asset B: Without_changing_the_202602250426.mp4 — LOCKED
-          "He models outcomes. Not vibes."
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-24">
         <div className="container-shell">
           <motion.div {...cardAnimation}>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Modeling Proof</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Advisor Credibility</p>
             <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Strategic Retirement Planning, Not Product Sales.</h2>
           </motion.div>
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[1.08fr_1fr] lg:items-start">
+          <div className="mt-10 grid gap-8 lg:grid-cols-[1.08fr_1fr] lg:items-start">
             <motion.div
               {...cardAnimation}
               className="relative min-h-[360px] overflow-hidden rounded-3xl sm:min-h-[460px]"
@@ -287,20 +258,6 @@ export default function Home() {
                   ],
                 },
                 {
-                  title: "Fiduciary-Minded Process",
-                  points: [
-                    "Recommendations are framed around alignment, not one-time transactions.",
-                    "Each design decision is mapped to protection and tax awareness goals.",
-                  ],
-                },
-                {
-                  title: "Long-Term Policy Management",
-                  points: [
-                    "Build around defined income and durability checkpoints.",
-                    "Review funding and performance to keep strategy on track over time.",
-                  ],
-                },
-                {
                   title: "Protection-First Allocation",
                   points: [
                     "Design around downside protection before growth assumptions.",
@@ -312,13 +269,6 @@ export default function Home() {
                   points: [
                     "Model when and how policy access supports retirement cash flow.",
                     "Coordinate income phases with Social Security and other assets.",
-                  ],
-                },
-                {
-                  title: "Tax-Aware Structure",
-                  points: [
-                    "Build tax-diversified distribution options for future flexibility.",
-                    "Stress-test assumptions for long-term sustainability.",
                   ],
                 },
               ].map((item, idx) => (
@@ -353,28 +303,38 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          LAYER 5 — DIAGNOSTIC ENGAGEMENT (Stress Test / Calculator)
-          ═══════════════════════════════════════════════════════════ */}
-      <IulCalculator />
-
-      {/* ═══════════════════════════════════════════════════════════
-          LAYER 6 — PROCESS (3 steps max)
+          SECTION 5 — STRUCTURED PLANNING PROCESS (3 Bold Pillars)
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-24">
         <div className="container-shell">
           <motion.div {...cardAnimation}>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Implementation</p>
-            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Our Structured Planning Process</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Process</p>
+            <h2 className="mt-3 text-3xl text-primary sm:text-5xl">Three Phases. One Structured Outcome.</h2>
           </motion.div>
 
-          <div className="mt-10 space-y-4">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
-              ["01", "Discovery Review", "Define protection priorities, tax posture, and retirement income objectives with full balance-sheet context."],
-              ["02", "Structured Illustration Modeling", "Compare funding and distribution scenarios to identify designs that support defined income and policy durability."],
-              ["03", "Implementation and Alignment", "Execute underwriting and policy setup with clear benchmarks for ongoing monitoring and long-term strategy fit."],
-            ].map(([n, t, c], idx) => (
+              {
+                icon: Search,
+                number: "01",
+                title: "Diagnose Retirement Exposure",
+                copy: "Map current assets, income gaps, tax posture, and sequence risk to understand where your plan is vulnerable.",
+              },
+              {
+                icon: Wrench,
+                number: "02",
+                title: "Engineer Income Structure",
+                copy: "Design a layered income architecture using protection-first tools — structured for durability, not market dependency.",
+              },
+              {
+                icon: BarChart3,
+                number: "03",
+                title: "Monitor & Adjust Long-Term",
+                copy: "Track policy performance, funding benchmarks, and distribution sustainability with scheduled reviews.",
+              },
+            ].map((pillar, idx) => (
               <motion.div
-                key={t}
+                key={pillar.title}
                 initial={sectionReveal.initial}
                 whileInView={sectionReveal.whileInView}
                 viewport={sectionReveal.viewport}
@@ -383,11 +343,16 @@ export default function Home() {
                   delay: idx * stagger.children,
                   ease: easing.easeOut,
                 }}
-                className="glass-panel rounded-2xl p-7 md:grid md:grid-cols-[100px_260px_1fr] md:items-start md:gap-6"
+                className="glass-panel flex flex-col rounded-2xl p-8"
               >
-                <p className="text-sm font-semibold tracking-[0.16em] text-accent">{n}</p>
-                <h3 className="mt-1 text-2xl leading-tight text-primary md:mt-0">{t}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground md:mt-0">{c}</p>
+                <div className="mb-5 flex items-center gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/12">
+                    <pillar.icon className="h-6 w-6 text-accent" />
+                  </div>
+                  <span className="text-xs font-semibold tracking-[0.16em] text-accent/60">{pillar.number}</span>
+                </div>
+                <h3 className="text-2xl leading-tight text-primary">{pillar.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.copy}</p>
               </motion.div>
             ))}
           </div>
@@ -395,7 +360,12 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          JASON BIO — Shorter, more clinical
+          SECTION 6 — RETIREMENT INCOME STRESS TEST (4-Step)
+          ═══════════════════════════════════════════════════════════ */}
+      <RetirementStressTest />
+
+      {/* ═══════════════════════════════════════════════════════════
+          JASON BIO — Shorter, clinical
           Asset C: jason-headshot.png — LOCKED
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-24">
@@ -441,8 +411,8 @@ export default function Home() {
       <section className="py-24">
         <div className="container-shell grid gap-6 lg:grid-cols-[1fr_1.55fr]">
           <motion.div {...cardAnimation} className="glass-panel rounded-2xl p-7">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Objection Handling</p>
-            <h2 className="mt-3 text-3xl text-primary sm:text-4xl">Common Questions About IUL</h2>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Common Questions</p>
+            <h2 className="mt-3 text-3xl text-primary sm:text-4xl">Structured Income Planning FAQ</h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               Neutral, educational guidance on structure, taxation, and planning assumptions.
             </p>
@@ -488,12 +458,12 @@ export default function Home() {
         <div className="container-shell">
           <div className="glass-panel-strong grid overflow-hidden rounded-3xl text-primary-foreground md:grid-cols-[1fr_1.05fr]">
             <div className="order-2 px-8 py-12 sm:px-12 md:order-1">
-              <h2 className="text-3xl sm:text-4xl">Request Your Custom IUL Illustration</h2>
+              <h2 className="text-3xl sm:text-4xl">Ready to Define Your Retirement Income?</h2>
               <p className="mt-4 max-w-2xl text-sm text-primary-foreground/88">
-                Get structured clarity on protection, tax-aware design, and defined income modeling based on your real timeline and objectives.
+                Schedule a structured review to map your assets, income needs, and protection priorities into a clear, actionable plan.
               </p>
               <Button asChild className="mt-7 h-11 bg-accent text-accent-foreground hover:bg-accent/90">
-                <Link href="/apply" data-major-cta>Request Custom Illustration</Link>
+                <Link href="/apply" data-major-cta>Schedule Structured Review</Link>
               </Button>
             </div>
             <div className="order-1 min-h-72 md:order-2 md:min-h-full">
