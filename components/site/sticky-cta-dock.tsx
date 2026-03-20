@@ -30,7 +30,7 @@ export function StickyCtaDock() {
           animate={stickyDockReveal.animate}
           exit={{ opacity: 0, y: 10 }}
           transition={stickyDockReveal.transition}
-          className="fixed bottom-0 left-0 right-0 z-40 md:bottom-6 md:left-auto md:right-6 md:w-auto"
+          className="fixed bottom-0 left-0 right-0 z-40 md:bottom-6 md:left-6 md:right-auto md:w-auto"
         >
           {/* Mobile: full-width bar */}
           <div className="flex items-center justify-between gap-3 border-t border-white/10 bg-[rgb(9_18_33/0.92)] px-4 py-3 backdrop-blur-md md:rounded-2xl md:border md:border-white/15 md:px-5 md:py-3.5 md:shadow-2xl"
